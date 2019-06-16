@@ -1,0 +1,67 @@
+add required to input
+
+CODE NI SIR
+
+when not logged in, user cant book - ok - will be redirected to login
+
+
+user register
+	-validations - ok
+	-wala pang redirect to login
+
+user login
+	console.log pa lang ang error messages
+
+
+upon login 
+	-will be redirected to catalog
+	DISPLAYS
+		-availabilities / automatically updates when booked
+
+sa catalog, may products and may button where user can book now
+
+when book button is clicked, will be redirected to availabilities, user will input number of seats
+	-validations - ok
+	-will not exceed available seats
+
+On the catalog, pag 0 na, will be unavailable
+
+user can also check her/his transactions
+	and can cancel his/her own bookings
+	walang edit?
+
+ADMIN
+if isAdmin == true - will be redirected to admin
+
+
+	USERS
+C   register    add booking
+R               get transactions
+U
+D 				cancel booking
+
+
+	ADMIN
+C  add seats
+R  retrieve seats
+U  update
+D  delete(disable)
+
+
+
+BETH
+
+ADMIN
+C add availabilities		blog
+R retrieve all/one			retrieve
+U update 					update			
+D delete 					delete
+
+USER
+C review 					booking
+R ok
+U not yet
+D not yet                   ok
+	
+
+
