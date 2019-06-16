@@ -65,3 +65,16 @@ D not yet                   ok
 	
 
 
+auto update page - nasa blogs admin
+
+TO DO ON MONDAY
+min date on input
+block date if booked
+change format of dates so it matches mongodb
+calendar for admin
+
+TO DO ON TUESDAY
+images
+login thru FB
+
+

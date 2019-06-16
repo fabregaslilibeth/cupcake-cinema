@@ -11,15 +11,13 @@ Admin Dashboard
 <div class="col-lg-8 mx-auto">
     <h3 class="text-center">Packages</h3>
 
+<a href="/addPackage">Add New Package</a>
     <table class="table table-striped mx-auto">
         <thead>
             <tr>
-                <th scope="col">Availability ID</th>
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
-                <th scope="col">Seats</th>
                 <th scope="col">Price</th>
-                <th scope="col">isActive?</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
@@ -44,16 +42,12 @@ Admin Dashboard
             availabilities.forEach(function(availability) {
                 document.getElementById("availabilities").innerHTML += `
                 <tr>
-                    <td>${availability._id}</td>
                     <td>${availability.name}</td>
                     <td>${availability.description}</td>
-                    <td>${availability.seats}</td>
                     <td>${availability.price}</td>
-                    <td>${availability.isActive}</td>
                     <td>
                         <button class="btn btn-info upd-btn" id="${availability._id}">Update</button>
-                        <button class="btn btn-danger del-btn" id="${availability._id}">Disable</button>
-                        <button class="btn btn-success act-btn" id="${availability._id}">Enable</button>
+                        <button class="btn btn-danger del-btn" id="${availability._id}">Delete</button>
                     </td>
                 </tr>
                 `
@@ -80,30 +74,49 @@ Admin Dashboard
             delButtons.forEach(function(button) {
                 //add onclick event listener to every button
                 button.addEventListener('click', function() {
+                      if(!confirm('do you sure')) {
+                        return false
+                    }
                     let id = this.getAttribute('id')
-                    fetch(`http://localhost:3000/availabilities/${id}`, {
-                        method: 'PUT', 
-                        headers: {
-                            "Access-Control-Request-Headers": "Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization",
-                            "Content-Type": "application/json",
-                            "Access-Control-Request-Method": "PUT",
-                            "X-Requested-With": "XMLHttpRequest",
-                            "Authorization": "Bearer " + localStorage.getItem('token')
-                        },
-                        //instead of deleting availabilities, disable them
-                        body: JSON.stringify({
-                            "isActive": false
-                        }),
-                    })
-                    .then(function(response) {
-                        return response.json();
-                    })
-                    .then(function(data) {
-                        window.alert(data.data.message);
-                    })
-                    .catch(function(err) {
-                        console.log("Something went wrong!", err);
-                    });
+
+
+                    console.log(id)
+                fetch('http://localhost:3000/availabilities/delete', {
+                    'method' : 'delete',
+                    'headers' : {
+                        'Content-Type' : 'application/json'
+                    },
+                    body : JSON.stringify({'id' : id})
+                })                        
+
+
+
+
+                    // fetch(`http://localhost:3000/availabilities/${id}`, {
+                    //     method: 'PUT', 
+                    //     headers: {
+                    //         "Access-Control-Request-Headers": "Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization",
+                    //         "Content-Type": "application/json",
+                    //         "Access-Control-Request-Method": "PUT",
+                    //         "X-Requested-With": "XMLHttpRequest",
+                    //         "Authorization": "Bearer " + localStorage.getItem('token')
+                    //     },
+                    //     //instead of deleting availabilities, disable them
+                    //     body: JSON.stringify({
+                    //         "isActive": false
+                    //     }),
+                    // })
+                    // .then(function(response) {
+                    //     return response.json();
+                    // })
+                    // .then(function(data) {
+                    //     window.alert(data.data.message);
+                    // })
+                    // .catch(function(err) {
+                    //     console.log("Something went wrong!", err);
+                    // });
+
+
                 });
             });
             //loop through the actButtons array to add an event listener and associate specific product id to each one

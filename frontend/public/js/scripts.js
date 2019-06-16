@@ -15,10 +15,10 @@ function checkUser() {
 							<a href="/blogs" class="nav-link">Blogs</a>
 							</li>
 							<li class="nav-item ">
-							<a href="/admin/reviews" class="nav-link">Client Reviews</a>
+							<a href="/reviews" class="nav-link">Client Reviews</a>
 							</li>                
 							<li class="nav-item ">
-							<a href="/admin/packages" class="nav-link">Packages</a>
+							<a href="/packages" class="nav-link">Packages</a>
 							</li>                
 					        <li class="nav-item">
 						        <a class="nav-link" href="/calendar">Calendar</a>

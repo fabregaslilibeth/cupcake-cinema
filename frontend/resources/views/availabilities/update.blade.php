@@ -104,6 +104,7 @@ Update Availability
             })
             .then(function(data) {
                 console.log(data);
+                  window.location ='/packages'
                 document.getElementById("status").innerHTML = data.data.message;
             })
             .catch(function(err) {

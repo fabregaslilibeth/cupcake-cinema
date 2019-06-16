@@ -29,34 +29,24 @@ router.get('/', (req, res) => {
 });
 
 // Add a new availability
-router.post('/', (req, res) => {
+router.post('/create', (req, res, next) => {
+	console.log(req.body)
+	// res.send({type : 'POST'})
+	AvailabilityModel.create(req.body)
+	.then(availability => {
+		res.send(availability)
+	}).catch(next)
 
-	// Build the new availability
-	let newAvailability = AvailabilityModel({
-		'name': req.body.name,
-		'description': req.body.description,
-		'seats' : req.body.seats,
-		'price': req.body.price,
-	});
+	// res.send({
+	// 	type : "POST",
+	// 	name : req.body.name,
+	// 	portfolio : req.body.portfolio,
+	// 	hired : req.body.hired,
+	// 	batch : req.body.batch
+	// })
 
-  	// Proceed to save the information to the data base
-	newAvailability.save( (err, availability) => {
+})
 
-		// If there is a problem with the database, throw an error
-		if(err){
-			return res.status(500).json({
-				'error': err
-			});
-		}
-		// If database operation is successful return success
-		return res.status(200).json({
-			'data': {
-				'message': 'availability added successfully',
-				'availability': availability
-			}
-		});
-	});
-});
 
 // Retrieve availabilities based on their id
 router.get('/:id', (req, res) => {
@@ -100,22 +90,31 @@ router.put('/:id', (req, res) => {
 		});
 });
 
-//delete an availability via its ID
-router.delete('/:id', (req,res) => {
-	AvailabilityModel.deleteOne({'_id' : req.params.id})
-		.then(availability => {
-			if(availability) {
-				return res.json({
-					'data' : {
-						'availability' : availability
-					}
-				});
-			}
+// //delete an availability via its ID
+// router.delete('/:id', (req,res) => {
+// 	AvailabilityModel.deleteOne({'_id' : req.params.id})
+// 		.then(availability => {
+// 			if(availability) {
+// 				return res.json({
+// 					'data' : {
+// 						'availability' : availability
+// 					}
+// 				});
+// 			}
 
-			return res.json({
-				'message' : 'No availability with the given ID found'
-			});
-		});
-});
+// 			return res.json({
+// 				'message' : 'No availability with the given ID found'
+// 			});
+// 		});
+// });
+
+router.delete('/delete', (req, res, next) => {
+	// console.log(req.body.blogId)
+	// res.send({type : 'DELETE'});
+	AvailabilityModel.deleteOne({_id : req.body.id })
+		.then(blog => {
+			res.send(blog)
+		}).catch(next)
+})
 
 module.exports = router;

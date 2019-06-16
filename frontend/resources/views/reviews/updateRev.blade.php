@@ -13,7 +13,6 @@ Cupcake Cinema || Edit a review
     <div class="row my-4" id="reviewList">
         <div class="col-lg-9 mx-auto">
 
-<p id="status"></p>
             <div class="row my-4 py-4" id="review">
                 <div class="col-lg-12">
                     <div class="row">

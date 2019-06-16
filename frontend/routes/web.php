@@ -31,8 +31,8 @@ Route::get('/availabilities/{id}', function($id) {
 });
 
 
-Route::get('/admin', function() {
-	return view('/users/admin');
+Route::get('/addPackage', function() {
+	return view('/packages/addPackage');
 });
 
 // ADMIN UPDATE SEATS
@@ -77,8 +77,8 @@ Route::get('/blogsUser' , function() {
 	return view('/blogs/userView');
 });
 
-Route::get('/admin/packages' , function() {
-	return view('/packages/adminView');
+Route::get('/packages' , function() {
+	return view('/packages/packAdminView');
 });
 
 Route::get('/calendar' , function() {

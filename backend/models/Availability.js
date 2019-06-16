@@ -8,7 +8,6 @@ const Schema = mongoose.Schema;
 const AvailabilitySchema = new Schema({ 
     name: String,
     description: String, 
-    seats: Number,
     price: Number,
     isActive: {type: Boolean, default: true}
 });
