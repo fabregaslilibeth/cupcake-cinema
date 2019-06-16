@@ -52,15 +52,15 @@ D  delete(disable)
 BETH
 
 ADMIN
-C add availabilities		blog
+C add packages				blog
 R retrieve all/one			retrieve
 U update 					update			
 D delete 					delete
 
 USER
 C review 					booking
-R ok
-U not yet
+R ok						ok
+U not yet					ok
 D not yet                   ok
 	
 

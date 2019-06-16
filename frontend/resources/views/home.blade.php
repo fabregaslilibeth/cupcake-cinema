@@ -228,6 +228,40 @@
 
 <script type="text/javascript">
 
+           fetch('http://localhost:3000/reviews/').then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            //console.log(data)
+            let reviews = data.data.reviews;
+            //console.log(reviews )
+            reviews.forEach(function(review) {
+                document.getElementById("reviews").innerHTML += `
+
+                            <div class="carousel-item ">
+                                <div class="testi-text-container">
+                                    <h3 class="text-center">${review.title}</h3>
+                                    <p class="text-center">"${review.message}"</p>
+                                    <p class="text-right px-4">${review.ownerEmail}</p>
+                                    <p class="text-right px-4">${review.date}</p>
+                                </div>
+                            </div>
+
+                                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+
+                `
+            });
+
+        })
+
+
            function createReview() {
                const formElement = document.getElementById('createContact');
             const formData = new FormData(formElement);

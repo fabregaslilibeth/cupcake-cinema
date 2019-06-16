@@ -4,9 +4,6 @@ const express = require('express');
 // include the Router used in the express framework
 const router = express.Router();
 
-// Include our configuration within config.js
-const config = require('./../config');
-
 //require the dev model 
 const ReviewModel = require('../models/Review');
 
@@ -18,19 +15,19 @@ const moment = require("moment");
 // 	res.send({type : 'GET'});
 // })
 
-//CREATE A NEW booking
+//CREATE A NEW Review
 router.post('/', (req, res) => {
 		
 		// Build the new transaction
-		let newBooking = new ReviewModel({
+		let newReview = new ReviewModel({
 			'ownerEmail': req.body.email,
 			'title': req.body.title,
-			'message': req.body.message,
+			'message': req.body.content,
 			'date' : moment().format('MMMM Do YYYY, h:mm:ss a') 
 		});
 
 		  	// Proceed to save the information to the data base
-			newBooking.save( (err, booking) => {
+			newReview.save( (err, review) => {
 				
 				// If there is a problem with the database, throw an error
 				if(err){
@@ -40,7 +37,7 @@ router.post('/', (req, res) => {
 				}
 
 				// If database operation is successful return success
-				return res.status(200).json(booking);
+				return res.status(200).json(review);
 
 			});
 
@@ -78,7 +75,70 @@ router.get('/:id', (req, res) => {
 });
 
 
-router.get('/showEdit/:id', (req, res) => {
+// RETRIEVE A review
+// router.get('/', (req, res) => {
+// 	ReviewModel.find({}, (err, reviews) => {
+// 		// console.log(reviews)
+// 		if(!err) {
+// 			return res.json({
+// 				'data' : {
+// 					'reviews' : reviews
+// 				}
+// 			})
+// 		} else {
+// 			console.log(err)
+// 		}
+// 	})
+// })
+
+// RETRIEVE A SINGLE review
+// router.get('/:id', (req,res)=> {
+// 	// console.log(req.params.id)
+// 	// execute a query in our reviews collection to filter out the document with an _id equal to
+// 	// the value of the req.params.id
+// 	ReviewModel.findOne({'_id' : req.params.id})
+// 	.then(review=> {
+// 		console.log(review)
+// 		if(review) {
+// 			return res.json({
+// 				'data' : {
+// 					'review' : review
+// 				}
+// 			})
+// 		}
+// 		return res.json({
+// 			'message' : 'no review with the given id'
+// 		})
+// 	})
+
+// })
+
+//DELETE A review
+// localhost:3000/reviews/delete
+router.delete('/delete', (req, res, next) => {
+	// console.log(req.body.reviewId)
+	// res.send({type : 'DELETE'});
+	ReviewModel.deleteOne({_id : req.body.id })
+		.then(review => {
+			res.send(review)
+		}).catch(next)
+})
+
+//UPDATE A review
+// router.put('/:reviewId', (req, res, next) => {
+// 	console.log(req.body)
+// 	// res.send({type : 'PUT'});
+// 	ReviewModel.updateOne({_id : req.params.reviewId}, req.body)
+// 	.then( ()=> {
+// 		ReviewModel.findOne({_id : req.params.reviewId})
+// 			.then(review => {
+// 				res.send(review)
+// 			})
+// 	}).catch(next)
+// })
+
+
+router.get('/:id', (req, res) => {
 
 	// Search for the specific availability based on the ID
 	ReviewModel.findOne({ '_id': req.params.id }).then( (review) => {
@@ -86,7 +146,7 @@ router.get('/showEdit/:id', (req, res) => {
 		// If no threads are available, return a successful request with info
 		if(!review){
 			return res.status(200).json({ 
-				'message': 'No available review to show.'
+				'message': 'No available booking to show.'
 			});
 		}
 
@@ -142,16 +202,6 @@ router.get('/', (req, res) => {
 });
 
 
-//delete
-router.delete('/delete', (req,res, next) => {
-
-	ReviewModel.deleteOne({_id : req.body.id })
-		.then(review => {
-			console.log(review)
-			
-			// res.send(review)
-		}).catch(next)
-})
 
 
 module.exports = router;

@@ -45,20 +45,29 @@ Route::get('/admin/transactions', function() {
 });
 
 Route::get('/transactions/{id}', function($id) {
-	return view('/transactions/guestView', compact('id'));
+	return view('/transactions/trnxGuestView', compact('id'));
 });
 
-Route::get('/reviews/{id}', function($id) {
-	return view('/reviews/guestView', compact('id'));
+Route::get('/addReview', function() {
+	return view('/reviews/addReview');
 });
 
-Route::get('/reviews/update/{id}', function($id) {
-	return view('/reviews/update', compact('id'));
-});
+		Route::get('/reviews/{id}', function($id) {
+			return view('/reviews/revGuestView', compact('id'));
+		});
 
-Route::get('/admin/reviews', function() {
-	return view('/reviews/adminView');
-});
+		Route::get('/reviews/update/{id}', function($id) {
+			return view('/reviews/update', compact('id'));
+		});
+
+		Route::get('/admin/reviews', function() {
+			return view('/reviews/adminView');
+		});
+
+
+		Route::get('/reviews/showEdit/{id}' , function($id) {
+			return view('/reviews/updateRev', compact('id'));
+		});
 
 Route::get('/blogs' , function() {
 	return view('/blogs/blogs');

@@ -152,6 +152,7 @@ router.delete('/delete', (req,res, next) => {
 	BookingModel.deleteOne({_id : req.body.id })
 		.then(booking => {
 			console.log(booking)
+			
 			// res.send(booking)
 		}).catch(next)
 })

@@ -11,6 +11,8 @@ Cupcake Cinema || My Bookings
     <h3 class="text-center">My Bookings</h3>
     <div class="row my-4">
         <div class="col-lg-9 mx-auto">
+
+<p id="status"></p>
             
     <table class="table table-striped mx-auto">
         <thead>
@@ -107,10 +109,9 @@ Cupcake Cinema || My Bookings
                                  "Authorization": "Bearer " + localStorage.getItem('token')
                         },
                       body : JSON.stringify({'id' : id})
+                    })
+                           
                   })
-                     // .then(res=> {
-                     //    window.location ='/'
-                });
             });
         })
         .catch(function(err) {
