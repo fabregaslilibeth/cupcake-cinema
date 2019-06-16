@@ -8,9 +8,7 @@ function checkUser() {
 				    </button>
 				    <div class="collapse navbar-collapse" id="collapsibleNavbar">
 					  <ul class="navbar-nav mx-auto menu">
-							<li class="nav-item ">
-							<a href="/admin" class="nav-link">Home</a>
-							</li>
+							
 							<li class="nav-item ">
 							<a href="/blogs" class="nav-link">Blogs</a>
 							</li>
@@ -84,7 +82,7 @@ function checkUser() {
 				    <div class="collapse navbar-collapse" id="collapsibleNavbar">
 						<ul class="navbar-nav mx-auto menu">
 						<li class="nav-item ">
-                    <a href="#home" class="nav-link">Home</a>
+                    <a href="/" class="nav-link">Home</a>
 		                </li>
 		                <li class="nav-item ">
 		                    <a href="/blogsUser" class="nav-link">Blogs</a>
@@ -95,9 +93,9 @@ function checkUser() {
 		                <li class="nav-item ">
 		                    <a href="/#investment" class="nav-link">Events</a>
 		                </li>                
-		                <!-- <li class="nav-item ">
+		                <li class="nav-item ">
 		                    <a href="/#calendar" class="nav-link">Calendar</a>
-		                </li> -->
+		                </li>
 		                <li class="nav-item ">
 						    <a href="/#contact" class="nav-link">Contact</a>
 						</li>

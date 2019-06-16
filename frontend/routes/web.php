@@ -60,7 +60,7 @@ Route::get('/addReview', function() {
 			return view('/reviews/update', compact('id'));
 		});
 
-		Route::get('/admin/reviews', function() {
+		Route::get('/reviews', function() {
 			return view('/reviews/adminView');
 		});
 
@@ -81,9 +81,9 @@ Route::get('/packages' , function() {
 	return view('/packages/packAdminView');
 });
 
-Route::get('/calendar' , function() {
-	return view('/availabilities/calendar');
-});
+// Route::get('/calendar' , function() {
+// 	return view('/availabilities/calendar');
+// });
 
 Route::get('/bookings/showEdit/{id}' , function($id) {
 	return view('/transactions/updateBook', compact('id'));

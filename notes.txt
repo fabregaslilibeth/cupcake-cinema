@@ -77,4 +77,4 @@ TO DO ON TUESDAY
 images
 login thru FB
 
-
+blogs - show image and title. 3buttons: delete, update  (popup), read more (popup). 

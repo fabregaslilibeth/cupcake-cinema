@@ -11,9 +11,9 @@ Update Availability
     <div class="row">
         <div class="col-lg-6 mx-auto">
             <h3>Blogs <button id="add-blog" class="btn " data-toggle="modal" data-target="#newblog">+Create a new blog</button></h3>
-              <ul id="blogList">
-            
-        </ul>
+              <div class="row my-4" id="blogList">
+
+             </div>
         </div>
     </div>
 </div>
@@ -34,12 +34,12 @@ Update Availability
 
                             <div class="form-group">
                                 <label for="name">Name: </label>
-                                <input type="text" id="name" class="form-control" name="name" placeholder="Blog Title">
+                                <input type="text" id="name" class="form-control" name="name" minlength="300" required="" placeholder="Blog Title">
                             </div>
 
                             <div class="form-group">
                                 <label for="content">Content: </label> <br>
-                                <textarea class="form-control" name="content" id="content" rows="10"></textarea>
+                                <textarea class="form-control" name="content" id="content" minlength="300" required="" rows="10"></textarea>
                             
                             </div>
 
@@ -138,12 +138,22 @@ Update Availability
                 blogs.map(blog => {
                     // console.log(blog)
                     blogGroups += `
-                        <li class="card p-5 text-center"> ${blog.title}${blog.content}
-                            <button class="deleteButton" data-id="${blog._id}">Delete
-                            </button>
-                           <button class="editButton" data-id="${blog._id}" data-toggle="modal" data-target="#editModal">Edit
-                            </button>
-                        </li>
+                         <div class="col-lg-4">
+                            <div class="card  border-0">
+
+                                <div class="card-body" >
+                                    <h4 class="card-title h2 text-center">${blog.title}</h4>
+                                    <p class="h4 text-center"><q>${blog.content}</q></p>
+                                    <button class="deleteButton" data-id="${blog._id}">Delete
+                                    </button>
+                                   <button class="editButton" data-id="${blog._id}" data-toggle="modal" data-target="#editModal">Edit
+                                    </button>
+                                     
+                                </div>
+                            </div>
+                        </div>
+
+                       
                     `
                 })
                 document.querySelector("#blogList").innerHTML = blogGroups;
@@ -250,9 +260,9 @@ Update Availability
                     //if confirm is not true, return false
                     // confirm('do you sure?')
 
-                    if(!confirm('do you sure')) {
-                        return false
-                    }
+                            if(!confirm('do you sure')) {
+                                return false
+                            }
                     //use the remove method to delete the blog in our layout
                     // element.remove()
                     console.log(e.target.parentNode)

@@ -11,7 +11,7 @@ Cupcake Cinema || My Reviews
 <p id="status"></p>
     <h3 class="text-center">My Reviews</h3> 
     <a href="/addReview" class="btn">Write new review</a>
-    <div class="row my-4" id="reviewList">
+        <div class="row my-4" id="reviewList">
 
 
 
@@ -37,19 +37,19 @@ Cupcake Cinema || My Reviews
             reviews.forEach(function(review) {
                 document.getElementById("reviewList").innerHTML += `
                        <div class="col-lg-4">
-            <div class="card  border-0">
+                        <div class="card  border-0">
 
-                <div class="card-body" >
-                    <h4 class="card-title h2 text-center">${review.title}</h4>
-                    <p class="h4 text-center"><q>${review.message}</q></p>
-                    <p class="h4 text-center"> <em> ${review.date} </em></p>
-                     <button class="btn btn-danger del-btn" id="${review._id}">Cancel review</button>
-                    <button class="editButton" id="${review._id}" data-toggle="modal" data-target="#editModal">Edit
-                            </button>
-                    
-                </div>
-            </div>
-            </div>
+                            <div class="card-body" >
+                                <h4 class="card-title h2 text-center">${review.title}</h4>
+                                <p class="h4 text-center"><q>${review.message}</q></p>
+                                <p class="h4 text-center"> <em> ${review.date} </em></p>
+                                 <button class="btn btn-danger del-btn" id="${review._id}">Cancel review</button>
+                                <button class="editButton" id="${review._id}" data-toggle="modal" data-target="#editModal">Edit
+                                        </button>
+                                
+                            </div>
+                        </div>
+                        </div>
                 `
          
             });
