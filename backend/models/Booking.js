@@ -6,11 +6,24 @@ const Schema = mongoose.Schema;
 
 // Create a new Schema for the Availability
 const BookingSchema = new Schema({ 
-    name1: String,
-    name2: String,
-    package_id: String, 
-    wedding_date: Date,
-    mobile: String,
+    name1:  {
+    	type: String, 
+    	required: [true, 'Name is required']
+    }, 
+    name2:  {
+    	type: String, 
+    	required: [true, 'Name is required']
+    },
+    package_id: String,
+    wedding_date: {
+    	type: String, 
+    	unique: true,
+    	required: [true, 'Date is required']
+    },
+    mobile: {
+    	type: String, 
+    	required: [true, 'Mobile is required']
+    },
     message: String,
     ownerEmail: String,
     status: {type: String, default: "booked"},

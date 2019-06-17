@@ -7,6 +7,11 @@ const router = express.Router();
 // Include our configuration within config.js
 const config = require('./../config');
 
+const newd = require('date-format');
+newd.asString(); //defaults to ISO8601 format and current date.
+newd.asString(new Date()); //defaults to ISO8601 format
+newd.asString('hh:mm:ss.SSS', new Date()); //just the time
+
 //require the dev model 
 const BookingModel = require('../models/Booking');
 
@@ -23,13 +28,13 @@ router.post('/', (req, res) => {
 		
 		// Build the new transaction
 		let newBooking = new BookingModel({
-			'ownerEmail': req.body.email,
+			'ownerEmail': req.body.ownerEmail,
 			'name1': req.body.name1,
 			'name2': req.body.name2,
 			'message': req.body.message,
 			'wedding_date' : req.body.wedding_date,
 			'mobile' : req.body.mobile,			
-			'package_id' : req.body.package_id,
+			//'package_id' : req.body.package_id,
 			'date' : moment().format('MMMM Do YYYY, h:mm:ss a') 
 		});
 

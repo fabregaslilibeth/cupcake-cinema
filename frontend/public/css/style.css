@@ -339,6 +339,11 @@ menu  {
 	transition: 500ms;	
 }
 
+#availabilities tr:hover .btn-container {
+	opacity: 1;
+	transition: 500ms;	
+}
+
 .btn-container {
 	display: flex;
 	opacity: 0;

@@ -18,7 +18,7 @@ Admin Dashboard
                 <th scope="col">Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Price</th>
-                <th scope="col">Actions</th>
+                <th scope="col"></th>
             </tr>
         </thead>
 
@@ -31,6 +31,7 @@ Admin Dashboard
         </div>
     </div>
 </div>
+
 
     <script type="text/javascript">
 
@@ -46,8 +47,10 @@ Admin Dashboard
                     <td>${availability.description}</td>
                     <td>${availability.price}</td>
                     <td>
-                        <button class="btn btn-info upd-btn" id="${availability._id}">Update</button>
-                        <button class="btn btn-danger del-btn" id="${availability._id}">Delete</button>
+                        <div class="btn-container">
+                            <button class="btn upd-btn" id="${availability._id}"><i class="fas fa-edit"></i></button>
+                            <button class="btn del-btn" id="${availability._id}"><i class="fas fa-trash-alt"></i></button>
+                        </div>    
                     </td>
                 </tr>
                 `

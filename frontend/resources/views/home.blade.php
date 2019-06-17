@@ -128,37 +128,37 @@
 
                             <div class="form-group">
                                 <label for="name1">Name: </label>
-                                <input type="text" id="name1" class="form-control" name="name1" placeholder="Your Name">
+                                <input type="text" id="name1" class="form-control" required="" name="name1" placeholder="Your Name">
                             </div>                            
                             <div class="form-group">
                                 <label for="name2">Partner's Name: </label>
-                                <input type="text" id="name2" class="form-control" name="name2" placeholder="Your Partner's Name">
+                                <input type="text" id="name2" class="form-control" required="" name="name2" placeholder="Your Partner's Name">
                             </div>
 
                             <div class="form-group">
                                 <label for="package_id">Preferred Package </label>
-                                <select name="package_id"  id="package_id" class="packageOptions border-0 text-center form-control">
+                                <select name="package_id"  id="package_id" class="packageOptions border-0 text-center form-control" required="">
                                     <option value="">Your preferred package</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
                                 <label for="wedding_date">Preferred Date</label>
-                                <input type="date" id="wedding_date" class="form-control"  name="wedding_date" placeholder="Preferred Date">        
+                                <input type="date" id="wedding_date" class="form-control" required=""  min="2019-06-20" name="wedding_date" placeholder="Preferred Date">        
                             </div>
                             
                             <div class="form-group">
                                 <label for="mobile">Mobile: </label>
-                                <input type="text" id="mobile" class="form-control" name="mobile" placeholder="Your Partner's Name">
+                                <input type="text" id="mobile" class="form-control" required="" name="mobile" placeholder="Your Partner's Name">
                             </div>
 
                             <div class="form-group">
                                 <label for="content">Message: </label>
-                                <textarea id="message" rows="3" class="form-control" name="message" placeholder="Message"> </textarea> 
+                                <textarea id="message" rows="3" class="form-control" required="" name="message" placeholder="Message"> </textarea> 
                             </div>
-
                         </form>
-                            <button id="createReviewButton" onclick="createReview()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
+
+                            <button id="createReviewButton" onclick="createContact()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
 
                             </div>
                         </div>
@@ -224,7 +224,7 @@
 
 <script type="text/javascript">
 
-           fetch('http://localhost:3000/reviews/').then(function(response) {
+       fetch('http://localhost:3000/reviews/').then(function(response) {
             return response.json();
         })
         .then(function(data) {
@@ -258,21 +258,37 @@
         })
 
 
-           function createReview() {
-               const formElement = document.getElementById('createContact');
-            const formData = new FormData(formElement);
+           function createContact() {
+            
+            let name1 = document.querySelector('#name1').value
+            let name2 = document.querySelector('#name2').value
+            let package_id = document.querySelector('#package_id').value
+            let wedding_date = document.querySelector('#wedding_date').value.toString()
+            let mobile = document.querySelector('#mobile').value
+            let message = document.querySelector('#message').value
+
+            ///const formElement = document.getElementById('createContact');
+            const formData = new FormData();
+
+            formData.name1 = name1
+            formData.name2 = name2
+            formData.package_id = package_id
+            formData.wedding_date = wedding_date
+            formData.mobile = mobile
+            formData.message = message
+            formData.ownerEmail = localStorage.getItem('email');
+
             console.log(formData)
-            let jsonObject = {};
-            for (const [key, value] of formData.entries()) {
-                jsonObject[key] = value;
-            };
+            // let jsonObject = {};
+            // for (const [key, value] of formData) {
+            //     jsonObject[key] = value;
+            // };
 
-            //add user email to jsonObject
-            jsonObject.email = localStorage.getItem('email');
-            console.log(JSON.stringify(jsonObject));
+            // //add user email to jsonObject
+            // jsonObject.email = localStorage.getItem('email');
+            // console.log(JSON.stringify(jsonObject));
 
-
-             let reqHeader = new Headers();
+            let reqHeader = new Headers();
             reqHeader.append('Access-Control-Request-Headers', 'Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization');
             reqHeader.append('Content-Type', 'application/json');
             reqHeader.append('Access-Control-Request-Method', 'POST');
@@ -281,7 +297,7 @@
 
             //create optional init object for supplying options to the fetch request
             let initObject = {
-                method: 'POST', headers: reqHeader, body: JSON.stringify(jsonObject),
+                method: 'POST', headers: reqHeader, body: JSON.stringify(formData),
             };
 
             //create a resource request object through the Request() constructor
@@ -301,8 +317,6 @@
 
 
         }
-
-    
 
         fetch('http://localhost:3000/availabilities/').then(function(response) {
             return response.json();

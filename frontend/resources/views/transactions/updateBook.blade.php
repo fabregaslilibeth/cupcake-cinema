@@ -39,7 +39,7 @@ Cupcake Cinema || My Bookings
                             
                             <div class="form-group">
                                 <label for="wedding_date">Preferred Date</label>
-<!--                                 <input type="date"  id="wedding_date" class="form-control" name="wedding_date" value="Preferred Date">         -->
+                                <input type="date"  id="wedding_date" class="form-control" name="wedding_date" value="Preferred Date">        
                             </div>
                             
                             <div class="form-group">
@@ -49,11 +49,11 @@ Cupcake Cinema || My Bookings
 
                             <div class="form-group">
                                 <label for="content">Message: </label>
-                                <textarea id="message" rows="5" class="form-control" name="message" value="Message"> </textarea> 
+                                <textarea id="message" rows="3" class="form-control" name="message" value="Message"> </textarea> 
                             </div>
 
                         </form>
-                            <button id="createReviewButton" onclick="editContact()" class="btn btn-secondary btn-block" data-dismiss="modal"> Submit</button>
+                            <button id="createReviewButton" onclick="editContact()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
 
                             </div>
                         </div>
@@ -86,7 +86,7 @@ Cupcake Cinema || My Bookings
             document.getElementById("name1").value = data.booking.name1;
             document.getElementById("name2").value = data.booking.name2;
             document.getElementById("package_id").value = data.booking.package_id;
-         //   document.getElementById("wedding_date").value = data.booking.wedding_date;
+            document.getElementById("wedding_date").value = data.booking.wedding_date;
             document.getElementById("mobile").value = data.booking.mobile;  
             document.getElementById("message").value = data.booking.message;
         })

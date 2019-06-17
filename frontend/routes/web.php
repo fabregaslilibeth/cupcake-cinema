@@ -81,9 +81,9 @@ Route::get('/packages' , function() {
 	return view('/packages/packAdminView');
 });
 
-// Route::get('/calendar' , function() {
-// 	return view('/availabilities/calendar');
-// });
+Route::get('/calendar' , function() {
+	return view('/availabilities/calendar');
+});
 
 Route::get('/bookings/showEdit/{id}' , function($id) {
 	return view('/transactions/updateBook', compact('id'));
