@@ -25,7 +25,7 @@ Cupcake Cinema || My Bookings
                 <th scope="col">Mobile</th>
                 <th scope="col">Email</th> 
                 <th scope="col">Status</th>
-                <th scope="col">Action</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody id="bookings"></tbody>
@@ -62,9 +62,13 @@ Cupcake Cinema || My Bookings
                     <td>${booking.mobile}</td>
                     <td>${booking.ownerEmail}</td>
                     <td>${booking.status}</td>
-                    <td><button class="btn btn-danger del-btn" id="${booking._id}">Cancel booking</button>
-                    <button class="editButton" id="${booking._id}" data-toggle="modal" data-target="#editModal">Edit
-                            </button></td>
+                    <td>
+                        <div class="btn-container">
+                            <button class="btn del-btn" id="${booking._id}"><i class="fas fa-trash-alt"></i></button>
+                            <button class="btn editButton" id="${booking._id}" data-toggle="modal" data-target="#editModal"><i class="fas fa-edit"></i>
+                                    </button>
+                        </div>
+                     </td>
                 </tr>
                 `
                 // if(booking.status == "cancelled") {

@@ -39,14 +39,17 @@ Cupcake Cinema || My Reviews
                        <div class="col-lg-4">
                         <div class="card  border-0">
 
-                            <div class="card-body" >
+                             <div class="card-body review-container" >
+                                <img src="${review.image_path}"  class="w-100" style=" height: 200px;" alt="">    
                                 <h4 class="card-title h2 text-center">${review.title}</h4>
                                 <p class="h4 text-center"><q>${review.message}</q></p>
                                 <p class="h4 text-center"> <em> ${review.date} </em></p>
-                                 <button class="btn btn-danger del-btn" id="${review._id}">Cancel review</button>
-                                <button class="editButton" id="${review._id}" data-toggle="modal" data-target="#editModal">Edit
-                                        </button>
-                                
+                                 
+                                <div class="btn-container">  
+                                     <button class="btn btn-danger del-btn" id="${review._id}">Cancel review</button>
+                                    <button class="editButton" id="${review._id}" data-toggle="modal" data-target="#editModal">Edit
+                                            </button>
+                                 </div>
                             </div>
                         </div>
                         </div>

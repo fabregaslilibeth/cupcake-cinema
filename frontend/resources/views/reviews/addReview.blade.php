@@ -12,11 +12,11 @@ My Transactions
      <div class="row my-4">
         <div class="col-lg-9 mx-auto">
 
-               <div class="row my-4 py-4" id="review">
+               <div  id="review">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-6 mx-auto" >
-                            <div class="form-wrapper col-lg-12">
+                            <div class="form-wrapper p-4 col-lg-12">
                                <form id="createReview">
                             @csrf
 
@@ -30,8 +30,14 @@ My Transactions
                                 <textarea id="message" rows="5" class="form-control" name="message" placeholder="Your review"> </textarea> 
                             </div>
 
+                               <div class="form-group">
+                                <label for="image">Image Link: </label>
+                               <input type="text" id="image_path" class="form-control" name="image_path" placeholder="Image Path">
+                            </div>
+
+
                         </form>
-                            <button id="createReviewButton" onclick="createReview" class="btn btn-primary btn-block" data-dismiss="modal"> Submit Review</button>
+                            <button id="createReviewButton" onclick="createReview" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit Review</button>
                              </div>   
                         </div>                               
                     </div>                               

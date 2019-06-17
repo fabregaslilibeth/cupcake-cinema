@@ -9,7 +9,7 @@ Update Availability
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-lg-6 mx-auto">
+        <div class="col-lg-10 mx-auto">
             <h3>Blogs <button id="add-blog" class="btn " data-toggle="modal" data-target="#newblog">+Create a new blog</button></h3>
               <div class="row my-4" id="blogList">
 
@@ -35,6 +35,12 @@ Update Availability
                             <div class="form-group">
                                 <label for="name">Name: </label>
                                 <input type="text" id="name" class="form-control" name="name" minlength="300" required="" placeholder="Blog Title">
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="img_path">Image: </label>
+                                <input type="text" id="img_path" class="form-control" img_path="img_path" minlength="300" required="" placeholder="Image Link">
                             </div>
 
                             <div class="form-group">
@@ -79,11 +85,13 @@ Update Availability
             document.querySelector("#createButton").addEventListener("click", function() {
                 // alert("hello")
                 let nameField = document.querySelector("#name")
-                let content = document.querySelector("#content")
+                let content = document.querySelector("#content")  
+                let img_path = document.querySelector("#img_path")
 
                 let formData = new FormData()
 
                 formData.title = nameField.value
+                formData.img_path = img_path.value
                 formData.content = content.value
 
                 console.log(formData)
@@ -142,13 +150,15 @@ Update Availability
                             <div class="card  border-0">
 
                                 <div class="card-body" >
+                                  <img src="${blog.img_path}"  class="w-100" style=" height: 200px;" alt="">    
                                     <h4 class="card-title h2 text-center">${blog.title}</h4>
                                     <p class="h4 text-center"><q>${blog.content}</q></p>
-                                    <button class="deleteButton" data-id="${blog._id}">Delete
+                                    <div class="btn-container">
+                                    <button class="del-btn" data-id="${blog._id}">Delete
                                     </button>
                                    <button class="editButton" data-id="${blog._id}" data-toggle="modal" data-target="#editModal">Edit
                                     </button>
-                                     
+                                     </div>
                                 </div>
                             </div>
                         </div>
@@ -254,7 +264,7 @@ Update Availability
                 // console.log(e.target.dataset.id)
                 // console.log(e.target.className)
                 // if the delete button is clicked, log the element's data-id
-                if(e.target.className === 'deleteButton') {
+                if(e.target.className === 'del-btn') {
                     // log in the console its data-id
                     // console.log(e.target.dataset.id)
                     //if confirm is not true, return false

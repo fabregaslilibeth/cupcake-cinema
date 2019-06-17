@@ -17,8 +17,8 @@ Cupcake Cinema || My Bookings
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-6 mx-auto" >
-                            <div class="form-wrapper col-lg-12">
-                                <form id="editContact" class="py-4 my-4">
+                            <div class="form-wrapper p-4 col-lg-12">
+                                <form id="editContact">
                             @csrf
 
                             <div class="form-group">

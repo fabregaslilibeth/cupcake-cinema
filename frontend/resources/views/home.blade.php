@@ -117,12 +117,13 @@
             </div> <!-- end of row-investments -->
     
     <hr>
-            <div class="row my-4 py-4" id="contact">
+              <div class="row my-4 py-4" id="contact">
                 <div class="col-lg-12">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-wrapper col-lg-9 ml-auto">
-                                <form id="createContact" class="py-4 my-4">
+                        <div class="col-lg-5 mx-auto">
+                            <div class="form-wrapper p-4 col-lg-12">
+                              <h2 class="contact-h2">contact</h2>
+                                <form id="createContact" >
                             @csrf
 
                             <div class="form-group">
@@ -153,20 +154,15 @@
 
                             <div class="form-group">
                                 <label for="content">Message: </label>
-                                <textarea id="message" rows="5" class="form-control" name="message" placeholder="Message"> </textarea> 
+                                <textarea id="message" rows="3" class="form-control" name="message" placeholder="Message"> </textarea> 
                             </div>
 
                         </form>
-                            <button id="createReviewButton" onclick="createReview()" class="btn btn-secondary btn-block" data-dismiss="modal"> Submit</button>
+                            <button id="createReviewButton" onclick="createReview()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
 
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="contact-headers mr-auto col-lg-8 text-center">
-                                <h2 class="get-in-touch">book now</h2>
-                                <h2 class="contact-h2">contact</h2>
-                           </div>
-                        </div>
+                     
                     </div>
                     
                 </div>      

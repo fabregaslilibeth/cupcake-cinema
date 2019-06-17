@@ -17,8 +17,8 @@ Cupcake Cinema || Edit a review
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-6 mx-auto" >
-                            <div class="form-wrapper col-lg-12">
-                                <form id="editReview" class="py-4 my-4">
+                            <div class="form-wrapper p-4 col-lg-12">
+                                <form id="editReview" >
                                     @csrf
 
                                     <div class="form-group">
@@ -30,8 +30,14 @@ Cupcake Cinema || Edit a review
                                         <label for="message">message: </label>
                                         <textarea id="message" class="form-control" name="message"  cols="30" rows="10"></textarea>
                                     </div>
+                                  
+                                    <div class="form-group">
+                                        <label for="image">Image Link: </label>
+                                       <input type="text" id="image_path" class="form-control" name="image_path" placeholder="Image Path">
+                                    </div>
+
                                 </form>    
-                                  <button id="updateReviewButton" onclick="editReview()" class="btn btn-secondary btn-block" data-dismiss="modal"> Submit</button>                                   
+                                  <button id="updateReviewButton" onclick="editReview()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>                                   
                              </div>   
                         </div>                               
                     </div>                               
@@ -58,7 +64,8 @@ Cupcake Cinema || Edit a review
             //dynamically fill in product info from API's response
             //console.log(data.availability.name);
             document.getElementById("title").value = data.review.title;
-            document.getElementById("message").value = data.review.message;
+            document.getElementById("message").value = data.review.message;  
+            document.getElementById("image_path").value = data.review.image_path;
         })
        .catch(function(err) {
             console.log(err);

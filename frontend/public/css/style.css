@@ -295,3 +295,63 @@ menu  {
 	background: rgba(0,0,0,.1);
 }
 
+
+
+
+#packageListAdmin {
+
+}
+
+.updateFormContainer {
+	background: rgba(0,0,0,.1);
+}
+
+#updItem {
+	padding: 20px;
+}
+
+#addToCat {
+	padding: 10px;
+	border-radius: 10px;
+	text-decoration: none;
+	color: black;
+
+}
+
+.admin-trx,
+.login-container
+ {
+	background: rgba(0,0,0,.1);
+}
+
+.review-container:hover .btn-container  {
+	opacity: 1;
+	transition: 500ms;
+}
+
+#bookings tr:hover .btn-container  {
+	opacity: 1;
+	transition: 500ms;
+}
+
+#blogList .col-lg-4:hover .btn-container {
+	opacity: 1;
+	transition: 500ms;	
+}
+
+.btn-container {
+	display: flex;
+	opacity: 0;
+	transition: 500ms;
+}
+
+
+.del-btn {
+	width: 50%;
+	transition: 500ms;
+}
+
+.editButton {
+	width: 50%;
+	transition: 500ms;
+}
