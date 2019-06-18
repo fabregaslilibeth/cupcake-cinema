@@ -7,26 +7,25 @@ Admin Dashboard
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-lg-10 mx-auto ">
-            
+        <div class="col-lg-10 admin-trx mx-auto ">
 
-    <table class="table table-striped table-responsive">
-        <thead>
-            <tr>
-                <th scope="col">Review ID</th>
-                <th scope="col">Posted by</th>
-                <th scope="col">Title</th>
-                <th scope="col">Content</th>
-                <th scope="col">Date Created</th>
-                <th scope="col">isDisplayed?</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
+            <table class="table table-striped mx-auto">
+                <thead>
+                    <tr>
+                        <th scope="col">Review ID</th>
+                        <th scope="col">Posted by</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Content</th>
+                        <th scope="col">Date Created</th>
+                        <th scope="col">isDisplayed?</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
 
-        <tbody id="reviews">
-            
-        </tbody>
-    </table>
+                <tbody id="reviews">
+                    
+                </tbody>
+            </table>
 
         </div>
     </div>

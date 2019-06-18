@@ -8,12 +8,9 @@ Cupcake Cinema || My Bookings
 
 
 <div class="container-fluid">
-    <h3 class="text-center">My Bookings</h3>
+    <h3 class="text-center">Calendar of Bookings</h3>
     <div class="row my-4">
-        <div class="col-lg-9 mx-auto">
-
-<p id="status"></p>
-<h3>Calendar</h3>
+        <div class="col-lg-5 mx-auto">
 
 <div id='calendar'></div>
 

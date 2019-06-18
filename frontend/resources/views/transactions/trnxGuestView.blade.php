@@ -46,6 +46,7 @@ Cupcake Cinema || My Bookings
         })
         .then(function(response) {
             return response.json();
+           
         })
         .then(function(data) {
             console.log(data)
@@ -76,7 +77,7 @@ Cupcake Cinema || My Bookings
                 // } else {
                 //     document.getElementById(booking._id).disabled = false;
                 // }
-            });
+            });  
 
 
               //turn the del-btn class into an array
@@ -98,7 +99,7 @@ Cupcake Cinema || My Bookings
             delButtons.forEach(function(button) {
                 //add onclick event listener to every button
                 button.addEventListener('click', function() {
-                    if(!confirm('do you sure')) {
+                    if(!confirm('Are you sure you want to delete?')) {
                         return false
                     }
                     let id = this.getAttribute('id');
@@ -113,9 +114,10 @@ Cupcake Cinema || My Bookings
                                  "Authorization": "Bearer " + localStorage.getItem('token')
                         },
                       body : JSON.stringify({'id' : id})
-                    })
+
+                    })  (document.location.reload()) 
                            
-                  })
+                  }) 
             });
         })
         .catch(function(err) {

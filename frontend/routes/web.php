@@ -40,7 +40,7 @@ Route::get('/availabilities/update/{id}', function($id) {
 	return view('/availabilities/update', compact('id'));
 });
 
-Route::get('/admin/transactions', function() {
+Route::get('/admin', function() {
 	return view('/transactions/adminView');
 });
 

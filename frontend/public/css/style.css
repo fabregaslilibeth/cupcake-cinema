@@ -289,39 +289,14 @@ menu  {
 
 }
 
-.admin-trx,
 .login-container
  {
 	background: rgba(0,0,0,.1);
 }
 
-
-
-
-#packageListAdmin {
-
-}
-
-.updateFormContainer {
-	background: rgba(0,0,0,.1);
-}
-
-#updItem {
-	padding: 20px;
-}
-
-#addToCat {
-	padding: 10px;
-	border-radius: 10px;
-	text-decoration: none;
-	color: black;
-
-}
-
-.admin-trx,
-.login-container
- {
-	background: rgba(0,0,0,.1);
+.admin-trx {
+	background: white;
+	min-height: 60vh;
 }
 
 .review-container:hover .btn-container  {
@@ -359,6 +334,10 @@ menu  {
 .editButton {
 	width: 50%;
 	transition: 500ms;
+}
+
+.readmoreButton {
+	width: 100%;
 }
 
 .alert-tagumpay {

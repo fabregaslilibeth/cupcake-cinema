@@ -17,7 +17,7 @@
                                     <h4>So this is us..</h4>
                                     <h1>about</h1>
                                </div>
-                                <p class="about-text">They say that anyone can pick up a camera and start taking beautiful photographs, as long as the camera that they use is of utmost quality type. I tend to disagree. While there are natural born gifted photographers, many have to go through countless years of learning and hardship to achieve a remarkable standard in photography.</p>
+                                <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illo tempore iste magnam, ut non mollitia itaque! Repellendus eius minus quae officiis qui repudiandae blanditiis libero, officia sequi beatae eaque.</p>
                             </div>
 
                             <div class="card about-image-container col-lg-6 mx-auto">
@@ -88,7 +88,7 @@
                     <h1 class="text-center py-4">PACKAGES</h1>
 
                     <div class="col-lg-6 text-center mx-auto">
-                        <p>Peak June 2019 wedding collection </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit at voluptatem recusandae laboriosam dolorum aliquam voluptas ab hic. Voluptas nihil consectetur dolore reprehenderit magni cumque nesciunt quas repudiandae illum labore.</p>
 
 
                               <!--   <ul  id="packageList">
@@ -117,50 +117,49 @@
             </div> <!-- end of row-investments -->
     
     <hr>
-              <div class="row my-4 py-4" id="contact">
+            <div class="row my-4 py-4" id="contact">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-5 mx-auto">
                             <div class="form-wrapper p-4 col-lg-12">
                               <h2 class="contact-h2">contact</h2>
-                                <div id="form-status" ></div>
-
+                              <p id="status"></p>
                                 <form id="createContact" >
                             @csrf
-                                
+
                             <div class="form-group">
                                 <label for="name1">Name: </label>
-                                <input type="text" id="name1" class="form-control" required="" name="name1" placeholder="Your Name">
+                                <input type="text" id="name1" class="form-control" name="name1" placeholder="Your Name">
                             </div>                            
                             <div class="form-group">
                                 <label for="name2">Partner's Name: </label>
-                                <input type="text" id="name2" class="form-control" required="" name="name2" placeholder="Your Partner's Name">
+                                <input type="text" id="name2" class="form-control" name="name2" placeholder="Your Partner's Name">
                             </div>
 
                             <div class="form-group">
                                 <label for="package_id">Preferred Package </label>
-                                <select name="package_id"  id="package_id" class="packageOptions border-0 text-center form-control" required="">
+                                <select name="package_id"  id="package_id" class="packageOptions border-0 text-center form-control">
                                     <option value="">Your preferred package</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
                                 <label for="wedding_date">Preferred Date</label>
-                                <input type="date" id="wedding_date" class="form-control" required=""  min="2019-06-20" name="wedding_date" placeholder="Preferred Date">        
+                                <input type="date" id="wedding_date" class="form-control"  name="wedding_date" placeholder="Preferred Date">        
                             </div>
                             
                             <div class="form-group">
                                 <label for="mobile">Mobile: </label>
-                                <input type="text" id="mobile" class="form-control" required="" name="mobile" placeholder="Mobile Number">
+                                <input type="text" id="mobile" class="form-control" name="mobile" placeholder="Mobile">
                             </div>
 
                             <div class="form-group">
                                 <label for="content">Message: </label>
-                                <textarea id="message" rows="3" class="form-control" required="" name="message" placeholder="Message">Message </textarea> 
+                                <textarea id="message" rows="3" class="form-control" name="message" placeholder="Message"> </textarea> 
                             </div>
-                            <button id="createReviewButton" onclick="createContact()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
-                        </form>
 
+                        </form>
+                            <button id="createReviewButton" onclick="createReview()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
 
                             </div>
                         </div>
@@ -226,7 +225,7 @@
 
 <script type="text/javascript">
 
-       fetch('http://localhost:3000/reviews/').then(function(response) {
+           fetch('http://localhost:3000/reviews/').then(function(response) {
             return response.json();
         })
         .then(function(data) {
@@ -260,37 +259,21 @@
         })
 
 
-           function createContact() {
-            
-            let name1 = document.querySelector('#name1').value
-            let name2 = document.querySelector('#name2').value
-            let package_id = document.querySelector('#package_id').value
-            let wedding_date = document.querySelector('#wedding_date').value.toString()
-            let mobile = document.querySelector('#mobile').value
-            let message = document.querySelector('#message').value
-
-            ///const formElement = document.getElementById('createContact');
-            const formData = new FormData();
-
-            formData.name1 = name1
-            formData.name2 = name2
-            formData.package_id = package_id
-            formData.wedding_date = wedding_date
-            formData.mobile = mobile
-            formData.message = message
-            formData.ownerEmail = localStorage.getItem('email');
-
+           function createReview() {
+               const formElement = document.getElementById('createContact');
+            const formData = new FormData(formElement);
             console.log(formData)
-            // let jsonObject = {};
-            // for (const [key, value] of formData) {
-            //     jsonObject[key] = value;
-            // };
+            let jsonObject = {};
+            for (const [key, value] of formData.entries()) {
+                jsonObject[key] = value;
+            };
 
-            // //add user email to jsonObject
-            // jsonObject.email = localStorage.getItem('email');
-            // console.log(JSON.stringify(jsonObject));
+            //add user email to jsonObject
+            jsonObject.email = localStorage.getItem('email');
+            console.log(JSON.stringify(jsonObject));
 
-            let reqHeader = new Headers();
+
+             let reqHeader = new Headers();
             reqHeader.append('Access-Control-Request-Headers', 'Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization');
             reqHeader.append('Content-Type', 'application/json');
             reqHeader.append('Access-Control-Request-Method', 'POST');
@@ -299,7 +282,7 @@
 
             //create optional init object for supplying options to the fetch request
             let initObject = {
-                method: 'POST', headers: reqHeader, body: JSON.stringify(formData),
+                method: 'POST', headers: reqHeader, body: JSON.stringify(jsonObject),
             };
 
             //create a resource request object through the Request() constructor
@@ -310,22 +293,24 @@
             fetch(clientReq).then(function(response) {
                 return response.json();
             })
-            .then(function(response) {
-                  console.log(JSON.stringify(data));
-                  document.querySelector('#form-status').classList = "alert-tagumpay";
-                  document.getElementById('form-status').innerHTML = JSON.stringify(data.message);
-                   window.location = '/transactions/{id}'; 
-                 // console.log(response);
+            .then(function(data) {
+                //console.log(response);
+                document.querySelector('#status').classList = "alert-tagumpay";
+                document.querySelector('#status').innerHTML = "Successfully booked.";
+              //  window.location.replace('/transactions/{id}')
+
             })
             .catch(function(err) {
-                document.querySelector('#form-status').classList = "alert-tagumpay";
-                document.getElementById('form-status').innerHTML = "Successfully booked.";
-                  window.location = '/transactions/{id}'; 
-            //    console.log("Something went wrong!", err);
+                console.log("Something went wrong!", err);
+                document.querySelector('#status').classList = "alert-bigo";
+                document.querySelector('#status').innerHTML = "Please log in first";
+                window.location.replace('/users/login')
             });
 
 
         }
+
+    
 
         fetch('http://localhost:3000/availabilities/').then(function(response) {
             return response.json();
@@ -337,12 +322,11 @@
             let availGroups = " ";
 
             availabilities.map(availability =>  {
-            let price = `${availability.price}`
                 availGroups += `
                              <tr>
                                <td>${availability.name} </td>
                                <td>${availability.description}</td>
-                               <td> ${price} </td>
+                               <td> ${availability.price} </td>
                              </tr>
                          
                 `

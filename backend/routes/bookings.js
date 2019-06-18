@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
 		
 		// Build the new transaction
 		let newBooking = new BookingModel({
-			'ownerEmail': req.body.ownerEmail,
+			'ownerEmail': req.body.email,
 			'name1': req.body.name1,
 			'name2': req.body.name2,
 			'message': req.body.message,
@@ -111,7 +111,7 @@ router.put('/:id', (req, res) => {
 				return res.json({
 					'data' : {
 						'booking' : booking,
-						'message' : 'booking successfully updated.'
+						'message' : 'Booking successfully updated.'
 					}
 				});
 			}

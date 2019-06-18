@@ -12,12 +12,12 @@ Cupcake Cinema || My Bookings
     <div class="row my-4">
         <div class="col-lg-9 mx-auto">
 
-<p id="status"></p>
 <div class="row my-4 py-4" id="contact">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-6 mx-auto" >
                             <div class="form-wrapper p-4 col-lg-12">
+                                <p id="status"></p>
                                 <form id="editContact">
                             @csrf
 
@@ -154,6 +154,7 @@ Cupcake Cinema || My Bookings
             })
             .then(function(data) {
                 console.log(data);
+                document.querySelector('#status').classList = "alert-tagumpay"
                 document.getElementById("status").innerHTML = data.data.message;
             })
             .catch(function(err) {

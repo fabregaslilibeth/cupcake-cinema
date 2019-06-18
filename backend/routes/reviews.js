@@ -107,7 +107,7 @@ router.put('/:id', (req, res) => {
 				return res.json({
 					'data' : {
 						'review' : review,
-						'message' : 'review successfully updated.'
+						'message' : 'Review successfully updated.'
 					}
 				});
 			}

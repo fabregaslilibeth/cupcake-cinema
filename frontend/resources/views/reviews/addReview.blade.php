@@ -8,7 +8,6 @@ My Transactions
 
 
 <div class="container-fluid">
-    <h3 class="text-center">My Reviews  
      <div class="row my-4">
         <div class="col-lg-9 mx-auto">
 
@@ -17,6 +16,8 @@ My Transactions
                     <div class="row">
                         <div class="col-lg-6 mx-auto" >
                             <div class="form-wrapper p-4 col-lg-12">
+                                <h3 class="text-center">Add Review</h3>
+                                 <p id="status"></p>   
                                <form id="createReview">
                             @csrf
 
@@ -92,9 +93,16 @@ My Transactions
             })
             .then(function(response) {
                 console.log(response);
+                document.querySelector('#status').classList = "alert-tagumpay";
+                document.querySelector('#status').innerHTML = "Successfully added review.";
+               // window.location.replace('/reviews/{id}')
+
+
             })
             .catch(function(err) {
                 console.log("Something went wrong!", err);
+                document.querySelector('#status').classList = "alert-bigo";
+                document.querySelector('#status').innerHTML = "Something went wrong. Check again.";
             });
 
         })

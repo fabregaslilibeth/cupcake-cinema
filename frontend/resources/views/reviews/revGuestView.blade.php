@@ -8,18 +8,16 @@ Cupcake Cinema || My Reviews
 
 
 <div class="container-fluid">
-<p id="status"></p>
+    <p id="status"></p>
     <h3 class="text-center">My Reviews</h3> 
-    <a href="/addReview" class="btn">Write new review</a>
+        <a href="/addReview" class="btn btn-outline-secondary">Write new review</a>
         <div class="row my-4" id="reviewList">
 
-
-
         </div>
-    </div>
 </div>
 
     <script type="text/javascript">
+
         fetch('http://localhost:3000/reviews/{{$id}}', {
             method: "GET",
             headers: {
@@ -77,7 +75,7 @@ Cupcake Cinema || My Reviews
             delButtons.forEach(function(button) {
                 //add onclick event listener to every button
                 button.addEventListener('click', function() {
-                    if(!confirm('do you sure')) {
+                    if(!confirm('Are you sure you want to delete this review')) {
                         return false
                     }
                     let id = this.getAttribute('id');
@@ -92,7 +90,10 @@ Cupcake Cinema || My Reviews
                                  "Authorization": "Bearer " + localStorage.getItem('token')
                         },
                       body : JSON.stringify({'id' : id})
-                    })
+                    }) 
+                      .then(res=> {
+                        window.location ='/blogs'
+                        })
                            
                   })
             });

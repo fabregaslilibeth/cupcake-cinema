@@ -22,11 +22,21 @@ function checkUser() {
 						        <a class="nav-link" href="/calendar">Calendar</a>
 					        </li>
 					        <li class="nav-item">
-					            <a class="nav-link" href="/admin/transactions">Transactions</a>
+					            <a class="nav-link" href="/admin">Transactions</a>
 					        </li>
-					        <li class="nav-item">
-					            <a class="nav-link" href="#" id="logout">Logout</a>
-					        </li>    
+					        <li class="nav-item dropdown">
+					            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+					              ${localStorage.getItem('email')}<span class="caret"></span>
+					            </a>
+
+					            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+					                
+					                <a class="dropdown-item" href="#" id="logout">Logout
+					                </a>
+
+
+					            </div>
+					        </li>   
 					    </ul>
 				    </div>
 				`
@@ -47,7 +57,7 @@ function checkUser() {
 					            <a href="/#testimonials" class="nav-link">Client Reviews</a>
 					        </li>                
 					        <li class="nav-item ">
-					            <a href="/#investment" class="nav-link">Events</a>
+					            <a href="/#investment" class="nav-link">Packages</a>
 					        </li>                
 					        <!-- <li class="nav-item ">
 					            <a href="/#calendar" class="nav-link">Calendar</a>
@@ -91,11 +101,8 @@ function checkUser() {
 		                    <a href="/#testimonials" class="nav-link">Client Reviews</a>
 		                </li>                
 		                <li class="nav-item ">
-		                    <a href="/#investment" class="nav-link">Events</a>
+		                    <a href="/#investment" class="nav-link">Packages</a>
 		                </li>                
-		                <li class="nav-item ">
-		                    <a href="/#calendar" class="nav-link">Calendar</a>
-		                </li>
 		                <li class="nav-item ">
 						    <a href="/#contact" class="nav-link">Contact</a>
 						</li>

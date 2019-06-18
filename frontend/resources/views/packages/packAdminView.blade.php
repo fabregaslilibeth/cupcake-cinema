@@ -8,11 +8,11 @@ Admin Dashboard
 <div class="container-fluid ">
     <div class="row">
   
-<div class="col-lg-8 mx-auto">
+<div class="col-lg-10 admin-trx mx-auto">
     <h3 class="text-center">Packages</h3>
 
-<a href="/addPackage">Add New Package</a>
-    <table class="table table-striped mx-auto">
+<a href="/addPackage" class="btn btn-outline-secondary m-4">Add New Package</a>
+    <table class="table table-striped mx-auto ">
         <thead>
             <tr>
                 <th scope="col">Name</th>

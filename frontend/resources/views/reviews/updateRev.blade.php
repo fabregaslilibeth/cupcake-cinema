@@ -8,7 +8,6 @@ Cupcake Cinema || Edit a review
 
 
 <div class="container-fluid">
-<p id="status"></p>
     <h3 class="text-center">Edit a review</h3> 
     <div class="row my-4" id="reviewList">
         <div class="col-lg-9 mx-auto">
@@ -18,6 +17,7 @@ Cupcake Cinema || Edit a review
                     <div class="row">
                         <div class="col-lg-6 mx-auto" >
                             <div class="form-wrapper p-4 col-lg-12">
+                                <p id="status"></p>
                                 <form id="editReview" >
                                     @csrf
 
@@ -111,6 +111,7 @@ Cupcake Cinema || Edit a review
             })
             .then(function(data) {
                 console.log(data);
+                document.getElementById('status').classList = "alert-tagumpay"
                 document.getElementById("status").innerHTML = data.data.message;
             })
             .catch(function(err) {

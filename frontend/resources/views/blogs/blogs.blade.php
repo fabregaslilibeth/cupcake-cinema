@@ -291,6 +291,9 @@ Update Availability
                     },
                     body : JSON.stringify({'id' : id})
                 })
+                 .then(res=> {
+                        window.location ='/blogs'
+                    })
             }
 
       

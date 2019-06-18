@@ -7,6 +7,7 @@ My Transactions
 @section('content')
 
                               <form id="createReview">
+                                <p id="success"> </p>
                             @csrf
 
                             <div class="form-group">
@@ -98,6 +99,7 @@ My Transactions
             })
             .then(function(data) {
                 console.log(data);
+                document.getElementById('status').classList = "alert-tagumpay"
                 document.getElementById("status").innerHTML = data.data.message;
             })
             .catch(function(err) {
