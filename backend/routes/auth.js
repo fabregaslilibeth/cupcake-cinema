@@ -25,7 +25,7 @@ router.post('/login', (req, res, next) => {
     // If we're unable to validate, request is unauthorized
     if (err || !user) {
         return res.status(400).json({
-          'error': 'Something is not right',
+          'message': 'Something is not right',
          });
     }
 

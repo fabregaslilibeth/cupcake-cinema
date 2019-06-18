@@ -360,3 +360,27 @@ menu  {
 	width: 50%;
 	transition: 500ms;
 }
+
+.alert-tagumpay {
+    background-color: #d5dad63d!important;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: #086533;
+    font-family: 'Laila', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+.alert-bigo {
+	/*background-color: #bf4444;*/
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    color: #bf4444;
+    font-family: 'Laila', serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}

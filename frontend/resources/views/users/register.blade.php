@@ -55,7 +55,8 @@ Register
 
             if(pw1!=pw2) {
                 document.getElementById('btn').disabled = true;
-                document.getElementById('status').innerHTML = "passwords don't match";
+                document.getElementById('status').innerHTML = "Passwords don't match. ";
+                document.querySelector('#status').classList = "alert-bigo";
             } else {                
                 document.getElementById('btn').disabled = false;
             }
@@ -94,10 +95,13 @@ Register
                 })
                 .then(function(data) {
                     console.log(JSON.stringify(data));
+                    document.querySelector('#status').classList = "alert-tagumpay";
                     document.getElementById('status').innerHTML = JSON.stringify(data.message);
                 })
                 .catch(function(err) {
-                    console.log("Something went wrong!", err);
+                    document.querySelector('#status').classList = "alert-bigo";
+                    document.getElementById('status').innerHTML = (err);
+                  //  console.log("Something went wrong!", err);
                 });
         };
     </script>

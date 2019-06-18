@@ -41,7 +41,7 @@ router.post('/register', (req,res) => {
 					newUser.save(err => {
 						if(!err) {
 							return res.json({
-								'message' : 'User registered successfully'
+								message: 'User registered successfully'
 							});
 						}
 					});

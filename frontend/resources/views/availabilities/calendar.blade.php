@@ -34,9 +34,9 @@ Cupcake Cinema || My Bookings
         .then(function(data) {
             
             let bookings = data.data.bookings;
-
-          //  bookings.forEach(function(booking) {
             bookings.map(booking => {   
+            //  bookings.forEach(function(booking) {
+
               
                     $(document).ready(function() {
                         // page is now ready, initialize the calendar...
@@ -47,12 +47,15 @@ Cupcake Cinema || My Bookings
 
                                 {
                                     title  : `${booking.name1}`,
-                                    start  : `${booking.wedding_date}`
+                                    start  : `${booking.wedding_date}`,
+                                    end    : `${booking.wedding_date}`,
+                                    id     : `${booking._id}`,
+                                    allDay: false
                                 }
                                 
-                            ]
-                        })
-                    });
+                                ]
+                            })
+                   });
             });
         })
         .catch(function(err) {

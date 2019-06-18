@@ -17,7 +17,7 @@
                                     <h4>So this is us..</h4>
                                     <h1>about</h1>
                                </div>
-                                <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illo tempore iste magnam, ut non mollitia itaque! Repellendus eius minus quae officiis qui repudiandae blanditiis libero, officia sequi beatae eaque.</p>
+                                <p class="about-text">They say that anyone can pick up a camera and start taking beautiful photographs, as long as the camera that they use is of utmost quality type. I tend to disagree. While there are natural born gifted photographers, many have to go through countless years of learning and hardship to achieve a remarkable standard in photography.</p>
                             </div>
 
                             <div class="card about-image-container col-lg-6 mx-auto">
@@ -88,7 +88,7 @@
                     <h1 class="text-center py-4">PACKAGES</h1>
 
                     <div class="col-lg-6 text-center mx-auto">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit at voluptatem recusandae laboriosam dolorum aliquam voluptas ab hic. Voluptas nihil consectetur dolore reprehenderit magni cumque nesciunt quas repudiandae illum labore.</p>
+                        <p>Peak June 2019 wedding collection </p>
 
 
                               <!--   <ul  id="packageList">
@@ -123,9 +123,11 @@
                         <div class="col-lg-5 mx-auto">
                             <div class="form-wrapper p-4 col-lg-12">
                               <h2 class="contact-h2">contact</h2>
+                                <div id="form-status" ></div>
+
                                 <form id="createContact" >
                             @csrf
-
+                                
                             <div class="form-group">
                                 <label for="name1">Name: </label>
                                 <input type="text" id="name1" class="form-control" required="" name="name1" placeholder="Your Name">
@@ -149,16 +151,16 @@
                             
                             <div class="form-group">
                                 <label for="mobile">Mobile: </label>
-                                <input type="text" id="mobile" class="form-control" required="" name="mobile" placeholder="Your Partner's Name">
+                                <input type="text" id="mobile" class="form-control" required="" name="mobile" placeholder="Mobile Number">
                             </div>
 
                             <div class="form-group">
                                 <label for="content">Message: </label>
-                                <textarea id="message" rows="3" class="form-control" required="" name="message" placeholder="Message"> </textarea> 
+                                <textarea id="message" rows="3" class="form-control" required="" name="message" placeholder="Message">Message </textarea> 
                             </div>
+                            <button id="createReviewButton" onclick="createContact()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
                         </form>
 
-                            <button id="createReviewButton" onclick="createContact()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
 
                             </div>
                         </div>
@@ -309,10 +311,17 @@
                 return response.json();
             })
             .then(function(response) {
-                console.log(response);
+                  console.log(JSON.stringify(data));
+                  document.querySelector('#form-status').classList = "alert-tagumpay";
+                  document.getElementById('form-status').innerHTML = JSON.stringify(data.message);
+                   window.location = '/transactions/{id}'; 
+                 // console.log(response);
             })
             .catch(function(err) {
-                console.log("Something went wrong!", err);
+                document.querySelector('#form-status').classList = "alert-tagumpay";
+                document.getElementById('form-status').innerHTML = "Successfully booked.";
+                  window.location = '/transactions/{id}'; 
+            //    console.log("Something went wrong!", err);
             });
 
 
@@ -328,11 +337,12 @@
             let availGroups = " ";
 
             availabilities.map(availability =>  {
+            let price = `${availability.price}`
                 availGroups += `
                              <tr>
                                <td>${availability.name} </td>
                                <td>${availability.description}</td>
-                               <td> ${availability.price} </td>
+                               <td> ${price} </td>
                              </tr>
                          
                 `

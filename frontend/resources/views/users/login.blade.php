@@ -11,6 +11,7 @@ Log-in
             
     <div class="card login-container ">
         <div class="card-header">Log-in</div>
+             <div id="status" ></div>
 
         <div class="card-body">
             <form id="myForm" class="">
@@ -106,7 +107,10 @@ Log-in
 
                 //catch any exception and display below message in the console
                 .catch(function(err) {
-                    console.log("Something went wrong!", err);
+                    document.querySelector('#status').classList = "alert-bigo";
+                    document.getElementById('status').innerHTML = "Incorrect details."; 
+
+                   //console.log("Something went wrong!", err);
                 });
         };
     </script>
