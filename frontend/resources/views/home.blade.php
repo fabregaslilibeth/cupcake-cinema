@@ -17,7 +17,7 @@
                                     <h4>So this is us..</h4>
                                     <h1>about</h1>
                                </div>
-                                <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni illo tempore iste magnam, ut non mollitia itaque! Repellendus eius minus quae officiis qui repudiandae blanditiis libero, officia sequi beatae eaque.</p>
+                                <p class="about-text">They say that anyone can pick up a camera and start taking beautiful photographs, as long as the camera that they use is of utmost quality type. I tend to disagree. While there are natural born gifted photographers, many have to go through countless years of learning and hardship to achieve a remarkable standard in photography.</p>
                             </div>
 
                             <div class="card about-image-container col-lg-6 mx-auto">
@@ -88,7 +88,7 @@
                     <h1 class="text-center py-4">PACKAGES</h1>
 
                     <div class="col-lg-6 text-center mx-auto">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit at voluptatem recusandae laboriosam dolorum aliquam voluptas ab hic. Voluptas nihil consectetur dolore reprehenderit magni cumque nesciunt quas repudiandae illum labore.</p>
+                        <p>Peak Summer 2019 collections start at P50,000 and include at least 6 hours of continuous wedding photography, a collection of digital images and a shareable online gallery.</p>
 
 
                               <!--   <ul  id="packageList">
