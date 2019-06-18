@@ -47,7 +47,7 @@ Update Availability
     <script type="text/javascript">
         
         //send a GET request using the availability ID as a wildcard to view specific product details
-        fetch('http://localhost:3000/https://vast-headland-67419.herokuapp.com/availabilities/{{$id}}')
+        fetch('https://vast-headland-67419.herokuapp.com/availabilities/{{$id}}')
         .then(function(response) {
             return response.json();
         })

@@ -334,7 +334,7 @@
 
     
 
-        fetch('http://localhost:3000/availabilities/').then(function(response) {
+        fetch('https://vast-headland-67419.herokuapp.com/availabilities/').then(function(response) {
             return response.json();
         })
         .then(function(data) {
