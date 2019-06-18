@@ -10,7 +10,7 @@ Update Availability
         <div class="col-lg-6 mx-auto">
             
     <div class="card updateFormContainer">
-        <div class="card-header">Edit availability</div>
+        <div class="card-header">Edit package</div>
         <div id="status"></div>
 
         <div class="card-body">
@@ -27,17 +27,12 @@ Update Availability
                 </div>
 
                 <div class="form-group">
-                    <label for="seats">Edit available seats</label>
-                    <input class="form-control" type="number" name="seats" id="seats">
+                    <label for="price">Package price</label>
+                    <input class="form-control" type="number" min="1" name="price" id="price">
                 </div>
 
                 <div class="form-group">
-                    <label for="price">Edit price per seat</label>
-                    <input class="form-control" type="number" name="price" id="price">
-                </div>
-
-                <div class="form-group">
-                    <a id="addToCat" href="#" class="btn btn-block btn-outline-secondary" onclick="submit()">Update Packages</a>
+                    <a id="addToCat" href="#" class="btn btn-block btn-outline-secondary" onclick="submit()">Update Package</a>
                 </div>
 
             </form>
@@ -61,7 +56,6 @@ Update Availability
             //console.log(data.availability.name);
             document.getElementById("name").value = data.availability.name;
             document.getElementById("description").value = data.availability.description;
-            document.getElementById("seats").value = data.availability.seats;
             document.getElementById("price").value = data.availability.price;
         })
        .catch(function(err) {
@@ -105,6 +99,8 @@ Update Availability
             .then(function(data) {
                 console.log(data);
                   window.location ='/packages'
+
+                document.getElementById("status").classList = "alert-tagumpay";
                 document.getElementById("status").innerHTML = data.data.message;
             })
             .catch(function(err) {

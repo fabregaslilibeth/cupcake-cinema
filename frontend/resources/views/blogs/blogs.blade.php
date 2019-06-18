@@ -10,7 +10,8 @@ Update Availability
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-10 mx-auto">
-            <h3>Blogs <button id="add-blog" class="btn " data-toggle="modal" data-target="#newblog">+Create a new blog</button></h3>
+            <h3 class="text-center">Blogs </h3>
+            <button id="add-blog" class="btn " data-toggle="modal" class="btn btn-outline-secondary" data-target="#newblog">Create a new blog</button>
               <div class="row my-4" id="blogList">
 
              </div>
@@ -40,7 +41,7 @@ Update Availability
 
                             <div class="form-group">
                                 <label for="img_path">Image: </label>
-                                <input type="text" id="img_path" class="form-control" img_path="img_path" minlength="300" required="" placeholder="Image Link">
+                                <input type="text" id="img_path" class="form-control" img_path="img_path" minlength="300" value="https://images.all-free-download.com/images/graphicthumb/wedding_background_with_pink_roses_313011.jpg" required="" placeholder="Image Link">
                             </div>
 
                             <div class="form-group">
@@ -190,6 +191,13 @@ Update Availability
 
                             blogDetails += `
                                 {{ csrf_field() }}
+
+                             <div class="form-group">
+                                <label for="img_path">Image: </label>
+                                <input type="text" id="img_path" class="form-control" img_path="img_path" minlength="300" required="" value="${blog.img_path}">
+                            </div>
+
+
                                   <div class="form-group">
                                   <input type="hidden" data-id=${blog._id} id="editId">   
                                 <label for="name">Name: </label>
@@ -270,7 +278,7 @@ Update Availability
                     //if confirm is not true, return false
                     // confirm('do you sure?')
 
-                            if(!confirm('do you sure')) {
+                            if(!confirm('Are you sure you want to delete this blog?')) {
                                 return false
                             }
                     //use the remove method to delete the blog in our layout

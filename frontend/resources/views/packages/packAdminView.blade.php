@@ -8,27 +8,28 @@ Admin Dashboard
 <div class="container-fluid ">
     <div class="row">
   
-<div class="col-lg-10 admin-trx mx-auto">
-    <h3 class="text-center">Packages</h3>
+        <div class="col-lg-10 admin-trx mx-auto">
+            <h3 class="text-center">Packages</h3>
 
-<a href="/addPackage" class="btn btn-outline-secondary m-4">Add New Package</a>
-    <table class="table table-striped mx-auto ">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Price</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
+        <a href="/addPackage" class="btn btn-outline-secondary m-4">Add New Package</a>
+            <table class="table table-striped mx-auto ">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
 
-        <tbody id="availabilities">
-            
-        </tbody>
-    </table>
-
+                <tbody id="availabilities">
+                    
+                </tbody>
+            </table>
 
         </div>
+
+
     </div>
 </div>
 
@@ -77,50 +78,25 @@ Admin Dashboard
             delButtons.forEach(function(button) {
                 //add onclick event listener to every button
                 button.addEventListener('click', function() {
-                      if(!confirm('do you sure')) {
+                      if(!confirm('Are you sure you want to delete this package?')) {
                         return false
                     }
                     let id = this.getAttribute('id')
 
 
                     console.log(id)
-                fetch('http://localhost:3000/availabilities/delete', {
-                    'method' : 'delete',
-                    'headers' : {
-                        'Content-Type' : 'application/json'
-                    },
-                    body : JSON.stringify({'id' : id})
-                })                        
+                        fetch('http://localhost:3000/availabilities/delete', {
+                            'method' : 'delete',
+                            'headers' : {
+                                'Content-Type' : 'application/json'
+                            },
+                            body : JSON.stringify({'id' : id})
+
+                        })      .then(res=> {
+                        window.location ='/packages' })                   
 
 
-
-
-                    // fetch(`http://localhost:3000/availabilities/${id}`, {
-                    //     method: 'PUT', 
-                    //     headers: {
-                    //         "Access-Control-Request-Headers": "Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization",
-                    //         "Content-Type": "application/json",
-                    //         "Access-Control-Request-Method": "PUT",
-                    //         "X-Requested-With": "XMLHttpRequest",
-                    //         "Authorization": "Bearer " + localStorage.getItem('token')
-                    //     },
-                    //     //instead of deleting availabilities, disable them
-                    //     body: JSON.stringify({
-                    //         "isActive": false
-                    //     }),
-                    // })
-                    // .then(function(response) {
-                    //     return response.json();
-                    // })
-                    // .then(function(data) {
-                    //     window.alert(data.data.message);
-                    // })
-                    // .catch(function(err) {
-                    //     console.log("Something went wrong!", err);
-                    // });
-
-
-                });
+                });  
             });
             //loop through the actButtons array to add an event listener and associate specific product id to each one
             actButtons.forEach(function(button) {

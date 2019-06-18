@@ -319,6 +319,11 @@ menu  {
 	transition: 500ms;	
 }
 
+.adminView-reviews tbody tr:hover .btn-container {
+	opacity: 1;
+	transition: 500ms;	
+}
+
 .btn-container {
 	display: flex;
 	opacity: 0;
@@ -329,15 +334,37 @@ menu  {
 .del-btn {
 	width: 50%;
 	transition: 500ms;
+	background: #5a454c;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+.display-btn {
+	width: 100%;
+	transition: 500ms;
 }
 
 .editButton {
 	width: 50%;
 	transition: 500ms;
+	background: #5a454c;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 .readmoreButton {
 	width: 100%;
+}
+
+.editSub {
+	width: 100%;
+	transition: 500ms;
+	background: #5a454c;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 .alert-tagumpay {

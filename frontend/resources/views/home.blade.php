@@ -233,6 +233,7 @@
             let reviews = data.data.reviews;
             //console.log(reviews )
             reviews.forEach(function(review) {
+                if (review.is_displayed == true)  {
                 document.getElementById("reviews").innerHTML += `
 
                             <div class="carousel-item ">
@@ -253,7 +254,7 @@
                                 <span class="sr-only">Next</span>
                               </a>
 
-                `
+                `}
             });
 
         })
