@@ -59,7 +59,7 @@ Admin Dashboard
                 formData.price = price.value
 
                 console.log(formData)
-                fetch("http://localhost:3000/availabilities/create", {
+                fetch("https://vast-headland-67419.herokuapp.com/availabilities/create", {
                     method: "POST",
                     headers : {
                         'Content-Type' : 'application/json'

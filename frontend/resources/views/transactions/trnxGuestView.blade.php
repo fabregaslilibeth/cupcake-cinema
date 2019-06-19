@@ -37,7 +37,7 @@ Cupcake Cinema || My Bookings
 </div>
 
     <script type="text/javascript">
-        fetch('http://localhost:3000/bookings/{{$id}}', {
+        fetch('https://vast-headland-67419.herokuapp.com/bookings/{{$id}}', {
             method: "GET",
             headers: {
                 "Content-Type" : "application/json",
@@ -104,7 +104,7 @@ Cupcake Cinema || My Bookings
                     }
                     let id = this.getAttribute('id');
                     console.log(id)
-                     fetch('http://localhost:3000/bookings/delete', {
+                     fetch('https://vast-headland-67419.herokuapp.com/bookings/delete', {
                         'method' : 'delete',
                         'headers' : {
                                      "Access-Control-Request-Headers": "Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization",

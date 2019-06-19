@@ -36,7 +36,7 @@ Admin Dashboard
 
     <script type="text/javascript">
 
-        fetch('http://localhost:3000/availabilities/').then(function(response) {
+        fetch('https://vast-headland-67419.herokuapp.com/availabilities/').then(function(response) {
             return response.json();
         })
         .then(function(data) {
@@ -85,7 +85,7 @@ Admin Dashboard
 
 
                     console.log(id)
-                        fetch('http://localhost:3000/availabilities/delete', {
+                        fetch('https://vast-headland-67419.herokuapp.com/availabilities/delete', {
                             'method' : 'delete',
                             'headers' : {
                                 'Content-Type' : 'application/json'
@@ -103,7 +103,7 @@ Admin Dashboard
                 //add onclick event listener to every button
                 button.addEventListener('click', function() {
                     let id = this.getAttribute('id')
-                    fetch(`http://localhost:3000/availabilities/${id}`, {
+                    fetch(`https://vast-headland-67419.herokuapp.com/availabilities/${id}`, {
                         method: 'PUT', 
                         headers: {
                             "Access-Control-Request-Headers": "Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization",

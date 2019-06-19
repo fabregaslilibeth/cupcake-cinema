@@ -18,7 +18,7 @@ Cupcake Cinema || My Reviews
 
     <script type="text/javascript">
 
-        fetch('http://localhost:3000/reviews/{{$id}}', {
+        fetch('https://vast-headland-67419.herokuapp.com/reviews/{{$id}}', {
             method: "GET",
             headers: {
                 "Content-Type" : "application/json",
@@ -91,9 +91,7 @@ Cupcake Cinema || My Reviews
                         },
                       body : JSON.stringify({'id' : id})
                     }) 
-                      .then(res=> {
-                        window.location ='/blogs'
-                        })
+                      document.location.reload()
                            
                   })
             });

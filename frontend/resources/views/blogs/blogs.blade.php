@@ -96,7 +96,7 @@ Update Availability
                 formData.content = content.value
 
                 console.log(formData)
-                fetch("http://localhost:3000/blogs/create", {
+                fetch("https://vast-headland-67419.herokuapp.com/blogs/create", {
                     method: "POST",
                     headers : {
                         'Content-Type' : 'application/json'
@@ -128,7 +128,7 @@ Update Availability
 
             // console.log('the token from lS is: ' + token)
 
-            const url = 'http://localhost:3000/blogs/'
+            const url = 'https://vast-headland-67419.herokuapp.com/blogs/'
             fetch(url, {
                 method : 'GET',
                 headers : {
@@ -178,7 +178,7 @@ Update Availability
                     if(e.target.className === 'editButton') {
                         // console.log('this is the id: ' + e.target.dataset.id)
                         let editId = e.target.dataset.id
-                        fetch('http://localhost:3000/blogs/'+editId)
+                        fetch('https://vast-headland-67419.herokuapp.com/blogs/'+editId)
                         .then(res=> {
                             return res.json()
                         })
@@ -247,7 +247,7 @@ Update Availability
                     // console.log(editId)
                     // console.log(e.target.parentNode.firstElementChild.nextElementSibling.dataset.id)
 
-                    fetch('http://localhost:3000/blogs/'+editId, {
+                    fetch('https://vast-headland-67419.herokuapp.com/blogs/'+editId, {
                         method: 'PUT',
                         headers: {
                             'Content-Type' : 'application/json'
@@ -292,7 +292,7 @@ Update Availability
             function removeblog(id) {
                 // console.log(id)
 
-                fetch('http://localhost:3000/blogs/delete', {
+                fetch('https://vast-headland-67419.herokuapp.com/blogs/delete', {
                     'method' : 'delete',
                     'headers' : {
                         'Content-Type' : 'application/json'

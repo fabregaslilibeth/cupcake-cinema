@@ -49,7 +49,7 @@ Cupcake Cinema || Edit a review
 </div>
 
     <script type="text/javascript">
-      fetch('http://localhost:3000/reviews/showEdit/{{$id}}', {
+      fetch('https://vast-headland-67419.herokuapp.com/reviews/showEdit/{{$id}}', {
             method: "GET",
             headers: {
                 "Content-Type" : "application/json",
@@ -103,7 +103,7 @@ Cupcake Cinema || Edit a review
             };
 
             //create a resource request object through the Request() constructor
-            let clientReq = new Request('http://localhost:3000/reviews/{{$id}}', initObject);
+            let clientReq = new Request('https://vast-headland-67419.herokuapp.com/reviews/{{$id}}', initObject);
 
             //use above request object as the argument for our fetch request
             fetch(clientReq).then(function(response) {

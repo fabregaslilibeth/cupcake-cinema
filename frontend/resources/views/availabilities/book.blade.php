@@ -31,7 +31,7 @@ View Class
     <script type="text/javascript">
         
         //send a GET request using the availability ID as a wildcard to view specific product details
-        fetch('http://localhost:3000/availabilities/{{$id}}')
+        fetch('https://vast-headland-67419.herokuapp.com/availabilities/{{$id}}')
         .then(function(response) {
             return response.json();
         })
@@ -74,7 +74,7 @@ View Class
             };
 
             //create a resource request object through the Request() constructor
-            let clientReq = new Request('http://localhost:3000/transactions/', initObject);
+            let clientReq = new Request('https://vast-headland-67419.herokuapp.com/transactions/', initObject);
 
             //use above request object as the argument for our fetch request
             fetch(clientReq).then(function(response) {

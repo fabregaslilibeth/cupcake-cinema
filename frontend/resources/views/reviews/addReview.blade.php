@@ -84,7 +84,7 @@ My Transactions
             };
 
             //create a resource request object through the Request() constructor
-            let clientReq = new Request('http://localhost:3000/reviews/', initObject);
+            let clientReq = new Request('https://vast-headland-67419.herokuapp.com/reviews/', initObject);
 
              console.log(clientReq)   
             //use above request object as the argument for our fetch request

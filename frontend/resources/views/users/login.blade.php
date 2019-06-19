@@ -69,7 +69,7 @@ Log-in
             };
 
             //create a resource request object through the Request() constructor
-            let clientReq = new Request('http://localhost:3000/auth/login', initObject);
+            let clientReq = new Request('https://vast-headland-67419.herokuapp.com/auth/login', initObject);
 
             //pass the request object as an argument for our fetch request
             fetch(clientReq)

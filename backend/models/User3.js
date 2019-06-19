@@ -6,9 +6,17 @@ const jwt = require('jsonwebtoken');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-	email: String,
-	password: String,
-	isAdmin: {type: Boolean, default: false} 
+	local: {
+		email: String,
+		password: String,
+		isAdmin: {type: Boolean, default: false} 
+	},
+	facebook: {
+		id: String,
+		token: String,
+		email: String,
+		name: String
+	}	
 });
 
 //adds a JWT generation method to the Schema
@@ -33,6 +41,15 @@ UserSchema.methods.toAuthJSON = function() {
 		token: this.generateJWT()
 	};
 };
+
+userSchema.methods.generateHash = function(password){
+	return bcrypt.hashSync(password, bcrypt.genSaltSync(9));
+}
+
+userSchema.methods.validPassword = function(password){
+	return bcrypt.compareSync(password, this.local.password);
+}
+
 
 //Set up the user model and export it to the 
 module.exports = mongoose.model('User', UserSchema);

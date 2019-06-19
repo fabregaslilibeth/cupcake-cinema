@@ -31,7 +31,7 @@ bookings History
         </div>
     </div>
     <script type="text/javascript">
-        fetch('http://localhost:3000/bookings/', {
+        fetch('https://vast-headland-67419.herokuapp.com/bookings/', {
             method: "GET",
             headers: {
                 "Content-Type" : "application/json",

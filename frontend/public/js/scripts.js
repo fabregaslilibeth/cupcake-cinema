@@ -18,9 +18,7 @@ function checkUser() {
 							<li class="nav-item ">
 							<a href="/packages" class="nav-link">Packages</a>
 							</li>                
-					        <li class="nav-item">
-						        <a class="nav-link" href="/calendar">Calendar</a>
-					        </li>
+					       
 					        <li class="nav-item">
 					            <a class="nav-link" href="/admin">Transactions</a>
 					        </li>
@@ -59,9 +57,7 @@ function checkUser() {
 					        <li class="nav-item ">
 					            <a href="/#investment" class="nav-link">Packages</a>
 					        </li>                
-					        <!-- <li class="nav-item ">
-					            <a href="/#calendar" class="nav-link">Calendar</a>
-					        </li> -->
+					      
 					        <li class="nav-item ">
 							    <a href="/#contact" class="nav-link">Contact</a>
 							</li>

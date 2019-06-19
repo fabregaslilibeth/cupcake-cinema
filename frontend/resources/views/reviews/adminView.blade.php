@@ -34,7 +34,7 @@ Admin Dashboard
 
     <script type="text/javascript">
 
-        fetch('http://localhost:3000/reviews/').then(function(response) {
+        fetch('https://vast-headland-67419.herokuapp.com/reviews/').then(function(response) {
             return response.json();
         })
         .then(function(data) {

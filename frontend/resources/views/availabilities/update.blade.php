@@ -47,7 +47,7 @@ Update Availability
     <script type="text/javascript">
         
         //send a GET request using the availability ID as a wildcard to view specific product details
-        fetch('http://localhost:3000/availabilities/{{$id}}')
+        fetch('http://localhost:3000/https://vast-headland-67419.herokuapp.com/availabilities/{{$id}}')
         .then(function(response) {
             return response.json();
         })
@@ -90,7 +90,7 @@ Update Availability
             };
 
             //create a resource request object through the Request() constructor
-            let clientReq = new Request('http://localhost:3000/availabilities/{{$id}}', initObject);
+            let clientReq = new Request('https://vast-headland-67419.herokuapp.com/availabilities/{{$id}}', initObject);
 
             //use above request object as the argument for our fetch request
             fetch(clientReq).then(function(response) {

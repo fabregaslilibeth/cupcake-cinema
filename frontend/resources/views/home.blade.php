@@ -145,7 +145,25 @@
                             
                             <div class="form-group">
                                 <label for="wedding_date">Preferred Date</label>
-                                <input type="date" id="wedding_date" class="form-control"  name="wedding_date" placeholder="Preferred Date">        
+                                <input type="date"  id="wedding_date" class="form-control" name="wedding_date" placeholder="Preferred Date">     
+                                   <script>
+                                        function pad(n) {
+                                            return n<10 ? '0'+n : n;
+                                        };
+
+                                        let currentDate = new Date()
+                                        let yyyy = currentDate.getFullYear();
+                                        let mm = currentDate.getMonth();
+                                        let dd = currentDate.getDate();
+
+                                        let mindate = yyyy + "-" + pad(mm+1) + "-" + pad(dd);
+                                        console.log(mindate)    
+
+                                        const e = document.querySelector('#wedding_date').min=mindate
+                                        console.log(e)
+
+                                    </script>
+
                             </div>
                             
                             <div class="form-group">
@@ -158,8 +176,8 @@
                                 <textarea id="message" rows="3" class="form-control" name="message" placeholder="Message"> </textarea> 
                             </div>
 
-                        </form>
                             <button id="createReviewButton" onclick="createReview()" class="btn btn-outline-secondary btn-block" data-dismiss="modal"> Submit</button>
+                        </form>
 
                             </div>
                         </div>
@@ -225,7 +243,7 @@
 
 <script type="text/javascript">
 
-           fetch('http://localhost:3000/reviews/').then(function(response) {
+           fetch('https://vast-headland-67419.herokuapp.com/reviews/').then(function(response) {
             return response.json();
         })
         .then(function(data) {
@@ -260,8 +278,11 @@
         })
 
 
+
+
            function createReview() {
-               const formElement = document.getElementById('createContact');
+
+            const formElement = document.getElementById('createContact');
             const formData = new FormData(formElement);
             console.log(formData)
             let jsonObject = {};
@@ -287,7 +308,7 @@
             };
 
             //create a resource request object through the Request() constructor
-            let clientReq = new Request('http://localhost:3000/bookings/', initObject);
+            let clientReq = new Request('https://vast-headland-67419.herokuapp.com/bookings/', initObject);
 
              console.log(clientReq)   
             //use above request object as the argument for our fetch request
@@ -298,7 +319,7 @@
                 //console.log(response);
                 document.querySelector('#status').classList = "alert-tagumpay";
                 document.querySelector('#status').innerHTML = "Successfully booked.";
-              //  window.location.replace('/transactions/{id}')
+              // window.location.replace('/transactions/{id}')
 
             })
             .catch(function(err) {
