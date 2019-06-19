@@ -193,18 +193,18 @@
                 <div class="col-lg-3">
                     <div class="footer-wrapper">
                         <p>Cupcake Cinema</p>
-                        <p>Why buy a whole cake if you can have the same gratification thru cupcake? </p>
+                        <p>Same experience as a cake, only more affordable. </p>
                     </div>                
                 </div>
                     
                 <div class="col-lg-3">
                     <div class="footer-links">
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="">Gallery</a></li>
-                            <li><a href="#testimonials">Client Reviews</a></li>
-                            <li><a href="#investment">Investment</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link nav-link-footer" href="/blogsUser">Blogs</a></li>
+                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#testimonials">Client Reviews</a></li>
+                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#investment">Packages</a></li>
+                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#contact">Contact</a></li>
                         </ul>
                      </div>   
                 </div>     
@@ -216,12 +216,12 @@
                         <p>857-2140</p>
                     </div>
                 </div>                
-                <div class="col-lg-3">
+                <div class="col-lg-3 text-center">
                     <div class="footer-newsletter">
                         Be updated with our promos and upcoming events.
                         <form action="">
-                            <input type="email" placeholder="Your Email Address" required="">
-                            <button>Subscribe now</button>
+                            <input class="form-control  my-2    " type="email" placeholder="Your Email Address" required="">
+                            <button class="btn btn-block btn-secondary">Subscribe now</button>
                         </form>
                     </div>
                 </div>
@@ -231,7 +231,7 @@
                 </div>
             </div> <!-- end of footer row -->
                 <div class="copyright col-lg-12">
-                    <p class="text-center">CUPCAKE CINEMA || &copy; 2015</p>
+                    <p class="text-center h4">CUPCAKE CINEMA || &copy; 2015</p>
                 </div>
 
         </div> <!-- end of container for entire home -->
