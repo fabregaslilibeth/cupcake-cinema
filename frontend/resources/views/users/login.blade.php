@@ -10,7 +10,7 @@ Log-in
         <div class="col-lg-5 mx-auto p-4">
             
     <div class="card login-container ">
-        <div class="card-header">Log-in</div>
+        <h3 class="card-header text-center">Log in</h3>
              <div id="status" ></div>
 
         <div class="card-body">

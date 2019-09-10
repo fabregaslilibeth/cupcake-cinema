@@ -68,7 +68,7 @@ Admin Dashboard
                 //add onclick event listener to every button
                 button.addEventListener('click', function() {
                     let id = this.getAttribute('id')
-                    fetch(`http://localhost:3000/reviews/${id}`, {
+                    fetch(`https://vast-headland-67419.herokuapp.com/${id}`, {
                         method: 'PUT', 
                         headers: {
                             "Access-Control-Request-Headers": "Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization",

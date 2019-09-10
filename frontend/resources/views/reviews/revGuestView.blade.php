@@ -80,7 +80,7 @@ Cupcake Cinema || My Reviews
                     }
                     let id = this.getAttribute('id');
                     console.log(id)
-                     fetch('http://localhost:3000/reviews/delete', {
+                     fetch('https://vast-headland-67419.herokuapp.com/reviews/delete', {
                         'method' : 'delete',
                         'headers' : {
                                      "Access-Control-Request-Headers": "Content-Type, Access-Control-Request-Method, X-Requested-With, Authorization",

@@ -12,39 +12,28 @@
                 <div class="col-lg-8 mx-auto py-4" >
                     <div class="about-wrapper ">
                         <div class="row">
-                            <div class="about-text-container col-lg-6 col-md-12 col-sm-12">
+                            <div class="about-text-container">
                                <div class="headers">
-                                    <h4>So this is us..</h4>
+                                    <h4>THIS IS US..</h4>
                                     <h1>about</h1>
                                </div>
-                                <p class="about-text">They say that anyone can pick up a camera and start taking beautiful photographs, as long as the camera that they use is of utmost quality type. I tend to disagree. While there are natural born gifted photographers, many have to go through countless years of learning and hardship to achieve a remarkable standard in photography.</p>
+
+                                <p class="about-text">They say that anyone can pick up a camera and start taking beautiful photographs, as long as the camera that they use is of utmost quality type. I tend to disagree. While there are natural born gifted photographers, many have to go through countless years of learning and hardship to achieve a remarkable standard in photography.
+                                </p>
                             </div>
 
-                            <div class="card about-image-container col-lg-6 mx-auto">
-                                <div class="about-image mx-auto">
-                                </div>
+                            <div class="card about-image-container">
+                                <div class="about-image"></div>
                             </div>
                         </div>
 
                     </div>
-                    <!-- <div class="team-wrapper my-4">
-                            <h1 class="text-center py-4 ">Awards</h1>
-                           <div class="team-photo-wrapper">
-                                <div class="team-indiv-photo col-sm-6">
-                                </div>
-                                <div class="team-indiv-photo col-sm-6">
-                                </div>
-                                <div class="team-indiv-photo col-sm-6">
-                                </div>      
-                                <div class="team-indiv-photo col-sm-6">
-                                </div>
-                           </div>
-                    </div> -->
+                 
                 </div>
             </div> <!-- end of about row -->
 
-            <div class="row" id="testimonials">
-                <h1 class="text-center mx-auto ">What our clients say about us</h1>
+            <div class="row my-4 py-4" id="testimonials">
+                <h4 class="text-center mx-auto ">What our clients say about us</h4>
                 <div class="col-lg-12" id="testimonials">
                     <!-- START CAROUSEL HERE -->
                     <div class="testi-wrapper mx-auto">
@@ -54,10 +43,11 @@
                           <div class="carousel-inner" id="reviews">
 
                             <div class="carousel-item active">
+
                                 <!-- <img src="/images/testi1.jpg"  alt=""> -->
                                 <div class="testi-text-container">
                                     <h3 class="text-center">Beyond Grateful</h3>
-                                    <p class="text-center">" I am a mother of two, but I don't want to be 'JUST A MOTHER'. So I enrolled in Cupcake Cinema Photography Class and I can completely say it has changed my life forever."</p>
+                                    <p class="text-center">" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio praesentium id, magnam eius omnis itaque fugiat ipsam tempora laboriosam et debitis ipsum iste, qui repellat. Libero excepturi odit, dolore perspiciatis."</p>
                                     <p class="text-right px-4">photoG@graphics.com</p>
                                     <p class="text-right px-4">June 15th 2019, 6:10:15 pm</p>
 
@@ -85,7 +75,7 @@
                     <hr>
             <div class="row my-4" id="investment">
                 <div class="col-lg-12">
-                    <h1 class="text-center py-4">PACKAGES</h1>
+                    <h4 class="text-center py-4">PACKAGES</h4>
 
                     <div class="col-lg-6 text-center mx-auto">
                         <p>Peak Summer 2019 collections start at P50,000 and include at least 6 hours of continuous wedding photography, a collection of digital images and a shareable online gallery.</p>
@@ -186,52 +176,30 @@
                     
                 </div>      
             </div> <!-- end of row for contact -->
-
+<!-- 
             <div class="row" id="footer">
                 <div class="col-lg-10 mx-auto">
                     <div class="row">
-                <div class="col-lg-3">
-                    <div class="footer-wrapper">
-                        <p>Cupcake Cinema</p>
-                        <p>Same experience as a cake, only more affordable. </p>
-                    </div>                
-                </div>
-                    
-                <div class="col-lg-3">
-                    <div class="footer-links">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link nav-link-footer" href="/blogsUser">Blogs</a></li>
-                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#testimonials">Client Reviews</a></li>
-                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#investment">Packages</a></li>
-                            <li class="nav-item"><a class="nav-link nav-link-footer" href="#contact">Contact</a></li>
-                        </ul>
-                     </div>   
-                </div>     
+               
+                            
+                        <div class="col-lg-12">
+                            <div class="footer-links">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item"><a class="nav-link nav-link-footer" href="#home">Home</a></li>
+                                    <li class="nav-item"><a class="nav-link nav-link-footer" href="/blogsUser">Blogs</a></li>
+                                    <li class="nav-item"><a class="nav-link nav-link-footer" href="#testimonials">Client Reviews</a></li>
+                                    <li class="nav-item"><a class="nav-link nav-link-footer" href="#investment">Packages</a></li>
+                                    <li class="nav-item"><a class="nav-link nav-link-footer" href="#contact">Contact</a></li>
+                                </ul>
+                             </div>   
+                        </div>     
 
-                <div class="col-lg-3">
-                    <div class="footer-contact">
-                        <p>24 Block D. Taft Avenue, Manila</p>
-                        <p>info@cupcakecinema.com</p>
-                        <p>857-2140</p>
-                    </div>
-                </div>                
-                <div class="col-lg-3 text-center">
-                    <div class="footer-newsletter">
-                        Be updated with our promos and upcoming events.
-                        <form action="">
-                            <input class="form-control  my-2    " type="email" placeholder="Your Email Address" required="">
-                            <button class="btn btn-block btn-secondary">Subscribe now</button>
-                        </form>
+              
                     </div>
                 </div>
-                    
-                </div>
-                </div>
-                </div>
-            </div> <!-- end of footer row -->
+            </div>  --><!-- end of footer row -->
                 <div class="copyright col-lg-12">
-                    <p class="text-center h4">CUPCAKE CINEMA || &copy; 2015</p>
+                    <p class="text-center">CUPCAKE CINEMA || &copy; 2015</p>
                 </div>
 
         </div> <!-- end of container for entire home -->

@@ -4,7 +4,10 @@ function checkUser() {
 			if(isAdmin == "true") {
 				document.getElementById("navBar").innerHTML = `
 				
-				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span>
+				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				    	<span class="navbar-toggler-icon">
+				    		<i class="fas fa-bars"></i>
+				    	</span>
 				    </button>
 				    <div class="collapse navbar-collapse" id="collapsibleNavbar">
 					  <ul class="navbar-nav mx-auto menu">
@@ -40,7 +43,10 @@ function checkUser() {
 				`
 			} else if(isAdmin == "false") {
 				document.getElementById("navBar").innerHTML = `
-				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span>
+				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				    	<span class="navbar-toggler-icon">
+				    		<i class="fas fa-bars"></i>
+				    	</span>
 				    </button>
 				    <div class="collapse navbar-collapse" id="collapsibleNavbar">
 						<ul class="navbar-nav mx-auto menu">
@@ -83,7 +89,10 @@ function checkUser() {
 				`
 			} else {
 				document.getElementById("navBar").innerHTML = `
-				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar"><span class="navbar-toggler-icon"></span>
+				    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				    	<span class="navbar-toggler-icon">
+				    		<i class="fas fa-bars"></i>
+				    	</span>
 				    </button>
 				    <div class="collapse navbar-collapse" id="collapsibleNavbar">
 						<ul class="navbar-nav mx-auto menu">
@@ -119,7 +128,7 @@ checkUser();
 
 function logout() {
 
-	fetch('http://localhost:3000/auth/logout', {
+	fetch('https://vast-headland-67419.herokuapp.com/auth/logout', {
             method: "GET",
             headers: {
                 "Authorization" : "Bearer " + localStorage.getItem('token')
